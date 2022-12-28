@@ -1,0 +1,1615 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>ExtentReports</title>
+
+	<style type='text/css'>
+	</style>
+</head>
+
+	<body class='extent standard default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>Biosimilar Calculator Automation Test Results</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Dec 28, 2022 04:41:58 PM</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>3.1.3</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='skip'><a href='#!'>Skip <i class='material-icons cyan-text'>redo</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>Biosimilar_340B</a></li>
+					<li><a href='#'>Regression</a></li>
+					<li><a href='#'>Biosimilar_Non340B</a></li>
+					<li><a href='#'>Originator_340B</a></li>
+					<li><a href='#'>Originator_Non340B</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Tests</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_01:Biosimilar_340B_G</span>
+						<span class='test-time'>Dec 28, 2022 04:41:58 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 28, 2022 04:41:58 PM</span>
+	<span class='label end-time'>Dec 28, 2022 04:45:39 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 3m 40s+491ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Biosimilar_340B</span>
+				<span class='category label white-text'>Regression</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:42:01 PM</td>
+					<td class='step-details'>The data: GomathiPriya_Nathan@premierinc.com successfully entered in  Username field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225921884.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225921884.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225921884.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:42:02 PM</td>
+					<td class='step-details'>Clicked on Next<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225922208.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225922208.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225922208.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:42:02 PM</td>
+					<td class='step-details'>The data: V2VsY29tZUAxMjIy successfully entered in  Password field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225922586.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225922586.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225922586.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:42:03 PM</td>
+					<td class='step-details'>Clicked on Signin<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225923420.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225923420.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225923420.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:42:08 PM</td>
+					<td class='step-details'>Clicked on ClosePopup<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225928787.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225928787.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225928787.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:42:14 PM</td>
+					<td class='step-details'>Clicked on Applications<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225934283.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225934283.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225934283.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:42:24 PM</td>
+					<td class='step-details'>Clicked on Biosimilar Calculator<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225944803.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225944803.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225944803.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:42:35 PM</td>
+					<td class='step-details'>The text :https://stage-biosimilar-calculator.premierinc.com/index matches with the value in calculatorPage Url field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225955091.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225955091.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225955091.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:42:35 PM</td>
+					<td class='step-details'>The data: NEUPOGEN successfully entered in  Group Name field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225955637.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225955637.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225955637.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:42:39 PM</td>
+					<td class='step-details'>The data: 50 successfully entered in  Units field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225959801.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225959801.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225959801.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:42:43 PM</td>
+					<td class='step-details'>Clicked on 340B Facility checkbox<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225963191.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225963191.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225963191.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:42:51 PM</td>
+					<td class='step-details'>Trade Name is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225971458.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225971458.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225971458.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:42:51 PM</td>
+					<td class='step-details'>NDC is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225971692.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225971692.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225971692.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:42:51 PM</td>
+					<td class='step-details'>Form is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225971973.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225971973.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225971973.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:42:52 PM</td>
+					<td class='step-details'>Adjusted Package Size is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225972226.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225972226.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225972226.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:42:52 PM</td>
+					<td class='step-details'>Package Quantity is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225972480.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225972480.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225972480.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:42:52 PM</td>
+					<td class='step-details'>Generic Name is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225972733.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225972733.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225972733.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:42:53 PM</td>
+					<td class='step-details'>Biosimilar Group is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225972986.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225972986.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225972986.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:42:53 PM</td>
+					<td class='step-details'>Is Originator is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225973252.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225973252.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225973252.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:42:53 PM</td>
+					<td class='step-details'>Contract Price is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225973488.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225973488.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225973488.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:42:53 PM</td>
+					<td class='step-details'>Contract Price Type is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225973752.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225973752.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225973752.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:42:54 PM</td>
+					<td class='step-details'>340B Price is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225974011.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225974011.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225974011.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:42:57 PM</td>
+					<td class='step-details'>WAC Price is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225977300.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225977300.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225977300.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:43:00 PM</td>
+					<td class='step-details'>Contract Strength is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225980614.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225980614.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225980614.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:43:03 PM</td>
+					<td class='step-details'>ASP is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225983913.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225983913.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225983913.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:43:07 PM</td>
+					<td class='step-details'>ASP Strength is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225987221.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225987221.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225987221.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:43:10 PM</td>
+					<td class='step-details'>Contract Units is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225990520.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225990520.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225990520.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:43:13 PM</td>
+					<td class='step-details'>340B Price is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225993818.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225993818.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225993818.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:43:17 PM</td>
+					<td class='step-details'>Reimbursement is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225997129.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225997129.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672225997129.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:43:20 PM</td>
+					<td class='step-details'>Differential is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226000430.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226000430.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226000430.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:43:23 PM</td>
+					<td class='step-details'>Differential Per Units is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226003754.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226003754.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226003754.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:43:27 PM</td>
+					<td class='step-details'>WAC Price is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226007066.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226007066.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226007066.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:43:30 PM</td>
+					<td class='step-details'>Reimbursement is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226010364.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226010364.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226010364.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:43:33 PM</td>
+					<td class='step-details'>Differential is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226013648.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226013648.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226013648.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:43:36 PM</td>
+					<td class='step-details'>Differential Per Units is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226016957.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226016957.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226016957.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:43:37 PM</td>
+					<td class='step-details'>Clicked on Filter Icon on NDC field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226017399.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226017399.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226017399.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:43:41 PM</td>
+					<td class='step-details'>The data: PriAutoTes1 successfully entered in  NDC field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226021066.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226021066.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226021066.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:43:44 PM</td>
+					<td class='step-details'>Clicked on Filter button on Filter Icon for the NDC field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226024452.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226024452.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226024452.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:43:47 PM</td>
+					<td class='step-details'>The text :PriAutoTes1 matches with the value in NDC field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226027706.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226027706.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226027706.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:43:48 PM</td>
+					<td class='step-details'>340BFacilityPricetoBillingUnits field   0.4166666667  is updated in the testdata sheet<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226028167.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226028167.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226028167.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:43:53 PM</td>
+					<td class='step-details'>ASPPriceinContractUnits field   153.60  is updated in the testdata sheet<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226033442.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226033442.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226033442.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:43:58 PM</td>
+					<td class='step-details'>Reimbursement_340BPrice field  150.53  is updated in the testdata sheet<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226038709.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226038709.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226038709.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:44:03 PM</td>
+					<td class='step-details'>Differential_340BPrice field  -49.47  is updated in the testdata sheet<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226043992.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226043992.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226043992.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:44:09 PM</td>
+					<td class='step-details'>DifferentialperUserinputUnits_340BPrice field  -2473.60  is updated in the testdata sheet<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226049252.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226049252.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226049252.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:44:14 PM</td>
+					<td class='step-details'>Reimbursement_WACPrice field  150.53 is updated in the testdata sheet<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226054486.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226054486.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226054486.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:44:19 PM</td>
+					<td class='step-details'>Differential_WACPrice field  -288.45 is updated in the testdata sheet<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226059738.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226059738.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226059738.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:44:25 PM</td>
+					<td class='step-details'>DifferentialperUserinputUnits_WACPrice -14422.60 field is updated in the testdata sheet<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226065002.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226065002.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226065002.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:44:30 PM</td>
+					<td class='step-details'>The text :ZARXIO matches with the value in Trade Name field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226070283.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226070283.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226070283.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:44:30 PM</td>
+					<td class='step-details'>The text :PriAutoTes1 matches with the value in NDC field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226070520.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226070520.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226070520.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:44:30 PM</td>
+					<td class='step-details'>The text :SYRINGE matches with the value in Form field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226070785.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226070785.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226070785.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:44:31 PM</td>
+					<td class='step-details'>The text :1 matches with the value in AdjustedPackageSize field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226071017.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226071017.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226071017.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:44:31 PM</td>
+					<td class='step-details'>The text :1 matches with the value in PackageQuantity field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226071269.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226071269.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226071269.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:44:31 PM</td>
+					<td class='step-details'>The text :FILGRASTIM-SNDZ matches with the value in GenericName field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226071517.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226071517.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226071517.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:44:31 PM</td>
+					<td class='step-details'>The text :Neupogen matches with the value in BiosimilarGroup field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226071754.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226071754.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226071754.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:44:32 PM</td>
+					<td class='step-details'>The text :No matches with the value in IsOriginator field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226072002.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226072002.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226072002.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:44:35 PM</td>
+					<td class='step-details'>The text :$327.04 matches with the value in ContractPrice field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226075286.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226075286.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226075286.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:44:35 PM</td>
+					<td class='step-details'>The text : matches with the value in ContractPriceType field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226075540.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226075540.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226075540.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:44:38 PM</td>
+					<td class='step-details'>The text :$200.00 matches with the value in The_340BPrice field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226078808.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226078808.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226078808.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:44:45 PM</td>
+					<td class='step-details'>The text :$438.98 matches with the value in WACPrice field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226085126.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226085126.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226085126.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:44:51 PM</td>
+					<td class='step-details'>The text :480MCG/ML matches with the value in Contract Strength field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226091442.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226091442.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226091442.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:44:57 PM</td>
+					<td class='step-details'>The text :$0.32 matches with the value in ASP field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226097742.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226097742.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226097742.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:45:01 PM</td>
+					<td class='step-details'>The text :1MCG/ML matches with the value in ASPStrength field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226101019.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226101019.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226101019.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:45:07 PM</td>
+					<td class='step-details'>The text :$150.53 matches with the value in Reimbursement - 340B/Contract Price field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226107307.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226107307.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226107307.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:45:13 PM</td>
+					<td class='step-details'>The text :$-49.47 matches with the value in Differential - 340B/Contract Price field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226113615.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226113615.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226113615.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:45:19 PM</td>
+					<td class='step-details'>The text :$-2,473.60 matches with the value in DifferentialPerUnitsHeader - 340B/Contract Price field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226119914.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226119914.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226119914.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:45:26 PM</td>
+					<td class='step-details'>The text :$150.53 matches with the value in Reimbursement_WACPrice field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226126209.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226126209.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226126209.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:45:32 PM</td>
+					<td class='step-details'>The text :$-288.45 matches with the value in Differential_WACPrice field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226132532.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226132532.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226132532.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:45:38 PM</td>
+					<td class='step-details'>The text :$-14,422.60 matches with the value in DifferentialPerUnits_WACPrice field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226138849.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226138849.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226138849.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:45:39 PM</td>
+					<td class='step-details'>The opened browsers are closed</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:45:39 PM</td>
+					<td class='step-details'><span class='label white-text green'>TC_01:Biosimilar_340B_G PASSED</span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_01:Biosimilar_Non340B_G</span>
+						<span class='test-time'>Dec 28, 2022 04:45:39 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 28, 2022 04:45:39 PM</span>
+	<span class='label end-time'>Dec 28, 2022 04:49:15 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 3m 36s+386ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Biosimilar_Non340B</span>
+				<span class='category label white-text'>Regression</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:45:41 PM</td>
+					<td class='step-details'>The data: GomathiPriya_Nathan@premierinc.com successfully entered in  Username field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226141660.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226141660.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226141660.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:45:42 PM</td>
+					<td class='step-details'>Clicked on Next<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226142021.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226142021.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226142021.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:45:42 PM</td>
+					<td class='step-details'>The data: V2VsY29tZUAxMjIy successfully entered in  Password field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226142347.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226142347.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226142347.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:45:43 PM</td>
+					<td class='step-details'>Clicked on Signin<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226143364.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226143364.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226143364.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:45:48 PM</td>
+					<td class='step-details'>Clicked on ClosePopup<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226148742.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226148742.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226148742.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:45:54 PM</td>
+					<td class='step-details'>Clicked on Applications<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226154245.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226154245.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226154245.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:04 PM</td>
+					<td class='step-details'>Clicked on Biosimilar Calculator<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226164765.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226164765.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226164765.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:15 PM</td>
+					<td class='step-details'>The text :https://stage-biosimilar-calculator.premierinc.com/index matches with the value in calculatorPage Url field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226175001.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226175001.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226175001.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:15 PM</td>
+					<td class='step-details'>The data: NEUPOGEN successfully entered in  Group Name field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226175583.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226175583.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226175583.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:19 PM</td>
+					<td class='step-details'>The data: 50 successfully entered in  Units field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226179720.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226179720.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226179720.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:27 PM</td>
+					<td class='step-details'>Trade Name is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226187993.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226187993.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226187993.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:28 PM</td>
+					<td class='step-details'>NDC is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226188258.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226188258.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226188258.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:28 PM</td>
+					<td class='step-details'>Form is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226188527.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226188527.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226188527.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:28 PM</td>
+					<td class='step-details'>Adjusted Package Size is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226188768.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226188768.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226188768.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:29 PM</td>
+					<td class='step-details'>Package Quantity is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226189005.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226189005.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226189005.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:29 PM</td>
+					<td class='step-details'>Generic Name is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226189284.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226189284.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226189284.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:29 PM</td>
+					<td class='step-details'>Biosimilar Group is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226189566.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226189566.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226189566.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:29 PM</td>
+					<td class='step-details'>Is Originator is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226189820.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226189820.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226189820.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:30 PM</td>
+					<td class='step-details'>Contract Price is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226190075.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226190075.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226190075.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:30 PM</td>
+					<td class='step-details'>Contract Price Type is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226190376.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226190376.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226190376.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:30 PM</td>
+					<td class='step-details'>340B Price is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226190631.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226190631.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226190631.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:33 PM</td>
+					<td class='step-details'>WAC Price is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226193938.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226193938.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226193938.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:37 PM</td>
+					<td class='step-details'>Contract Strength is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226197253.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226197253.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226197253.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:40 PM</td>
+					<td class='step-details'>ASP is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226200569.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226200569.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226200569.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:43 PM</td>
+					<td class='step-details'>ASP Strength is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226203877.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226203877.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226203877.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:47 PM</td>
+					<td class='step-details'>Contract Units is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226207165.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226207165.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226207165.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:50 PM</td>
+					<td class='step-details'>Contract Price is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226210456.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226210456.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226210456.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:53 PM</td>
+					<td class='step-details'>Reimbursement is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226213755.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226213755.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226213755.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:57 PM</td>
+					<td class='step-details'>Differential is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226217053.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226217053.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226217053.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:47:00 PM</td>
+					<td class='step-details'>Differential Per Units is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226220339.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226220339.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226220339.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:47:03 PM</td>
+					<td class='step-details'>WAC Price is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226223627.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226223627.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226223627.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:47:06 PM</td>
+					<td class='step-details'>Reimbursement is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226226928.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226226928.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226226928.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:47:10 PM</td>
+					<td class='step-details'>Differential is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226230202.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226230202.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226230202.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:47:13 PM</td>
+					<td class='step-details'>Differential Per Units is displayed<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226233503.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226233503.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226233503.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:47:13 PM</td>
+					<td class='step-details'>Clicked on Filter Icon on NDC field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226233966.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226233966.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226233966.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:47:17 PM</td>
+					<td class='step-details'>The data: PriAutoTes1 successfully entered in  NDC field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226237620.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226237620.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226237620.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:47:21 PM</td>
+					<td class='step-details'>Clicked on Filter button on Filter Icon for the NDC field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226241042.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226241042.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226241042.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:47:24 PM</td>
+					<td class='step-details'>The text :PriAutoTes1 matches with the value in NDC field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226244301.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226244301.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226244301.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:47:24 PM</td>
+					<td class='step-details'>ContractPriceinContractUnits field   0.6813333333  is updated in the testdata sheet<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226244555.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226244555.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226244555.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:47:29 PM</td>
+					<td class='step-details'>ASPPriceinContractUnits field   153.60  is updated in the testdata sheet<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226249783.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226249783.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226249783.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:47:35 PM</td>
+					<td class='step-details'>ReimbursmentContractPrice field  150.53  is updated in the testdata sheet<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226255049.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226255049.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226255049.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:47:40 PM</td>
+					<td class='step-details'>Differential_ContractPrice field  -176.51  is updated in the testdata sheet<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226260297.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226260297.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226260297.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:47:45 PM</td>
+					<td class='step-details'>DifferentialperUserinputUnits_ContractPrice field  -8825.60  is updated in the testdata sheet<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226265547.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226265547.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226265547.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:47:50 PM</td>
+					<td class='step-details'>Reimbursement_WACPrice field  150.53 is updated in the testdata sheet<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226270825.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226270825.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226270825.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:47:56 PM</td>
+					<td class='step-details'>Differential_WACPrice field  -288.45 is updated in the testdata sheet<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226276077.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226276077.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226276077.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:01 PM</td>
+					<td class='step-details'>DifferentialperUserinputUnits_WACPrice -14422.60 field is updated in the testdata sheet<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226281330.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226281330.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226281330.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:06 PM</td>
+					<td class='step-details'>The text :ZARXIO matches with the value in Trade Name field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226286580.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226286580.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226286580.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:06 PM</td>
+					<td class='step-details'>The text :PriAutoTes1 matches with the value in NDC field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226286846.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226286846.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226286846.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:07 PM</td>
+					<td class='step-details'>The text :SYRINGE matches with the value in Form field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226287112.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226287112.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226287112.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:07 PM</td>
+					<td class='step-details'>The text :1 matches with the value in AdjustedPackageSize field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226287351.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226287351.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226287351.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:07 PM</td>
+					<td class='step-details'>The text :1 matches with the value in PackageQuantity field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226287603.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226287603.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226287603.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:07 PM</td>
+					<td class='step-details'>The text :FILGRASTIM-SNDZ matches with the value in GenericName field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226287848.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226287848.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226287848.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:08 PM</td>
+					<td class='step-details'>The text :Neupogen matches with the value in BiosimilarGroup field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226288127.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226288127.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226288127.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:08 PM</td>
+					<td class='step-details'>The text :No matches with the value in IsOriginator field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226288375.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226288375.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226288375.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:11 PM</td>
+					<td class='step-details'>The text :$327.04 matches with the value in ContractPrice field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226291643.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226291643.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226291643.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:11 PM</td>
+					<td class='step-details'>The text : matches with the value in ContractPriceType field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226291909.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226291909.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226291909.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:15 PM</td>
+					<td class='step-details'>The text :$200.00 matches with the value in The_340BPrice field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226295187.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226295187.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226295187.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:21 PM</td>
+					<td class='step-details'>The text :$438.98 matches with the value in WACPrice field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226301500.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226301500.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226301500.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:27 PM</td>
+					<td class='step-details'>The text :480MCG/ML matches with the value in Contract Strength field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226307830.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226307830.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226307830.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:34 PM</td>
+					<td class='step-details'>The text :$0.32 matches with the value in ASP field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226314172.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226314172.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226314172.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:37 PM</td>
+					<td class='step-details'>The text :1MCG/ML matches with the value in ASPStrength field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226317456.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226317456.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226317456.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:43 PM</td>
+					<td class='step-details'>The text :$150.53 matches with the value in Reimbursement - 340B/Contract Price field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226323750.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226323750.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226323750.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:50 PM</td>
+					<td class='step-details'>The text :$-176.51 matches with the value in Differential - 340B/Contract Price field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226330047.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226330047.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226330047.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:56 PM</td>
+					<td class='step-details'>The text :$-8,825.60 matches with the value in DifferentialPerUnitsHeader - 340B/Contract Price field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226336350.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226336350.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226336350.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:49:02 PM</td>
+					<td class='step-details'>The text :$150.53 matches with the value in Reimbursement_WACPrice field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226342642.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226342642.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226342642.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:49:08 PM</td>
+					<td class='step-details'>The text :$-288.45 matches with the value in Differential_WACPrice field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226348955.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226348955.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226348955.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:49:15 PM</td>
+					<td class='step-details'>The text :$-14,422.60 matches with the value in DifferentialPerUnits_WACPrice field<img data-featherlight='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226355281.png' width='10%' src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226355281.png' data-src='E:\gnathan\Desktop\Automation - Non CRM\BiosimilarCalculator\TestNG/Screenshots/2022-12-28/1672226355281.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:49:15 PM</td>
+					<td class='step-details'>The opened browsers are closed</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:49:15 PM</td>
+					<td class='step-details'><span class='label white-text green'>TC_01:Biosimilar_Non340B_G PASSED</span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_01:Originator_340B_G</span>
+						<span class='test-time'>Dec 28, 2022 04:49:15 PM</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 28, 2022 04:49:15 PM</span>
+	<span class='label end-time'>Dec 28, 2022 04:49:15 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+82ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Originator_340B</span>
+				<span class='category label white-text'>Regression</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='skip'>
+					<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+					<td class='timestamp'>4:49:15 PM</td>
+					<td class='step-details'><span class='label white-text orange'>TC_01:Originator_340B_G SKIPPED</span></td>
+				</tr>
+				<tr class='log' status='skip'>
+					<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+					<td class='timestamp'>4:49:15 PM</td>
+					<td class='step-details'><pre>org.testng.SkipException: Skipping execution for  :TC_01:Originator_340B_G
+	at driver.Driver.executeTestcase(Driver.java:80)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_01:Originator_Non340B_G</span>
+						<span class='test-time'>Dec 28, 2022 04:49:15 PM</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 28, 2022 04:49:15 PM</span>
+	<span class='label end-time'>Dec 28, 2022 04:49:15 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+78ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Originator_Non340B</span>
+				<span class='category label white-text'>Regression</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='skip'>
+					<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+					<td class='timestamp'>4:49:15 PM</td>
+					<td class='step-details'><span class='label white-text orange'>TC_01:Originator_Non340B_G SKIPPED</span></td>
+				</tr>
+				<tr class='log' status='skip'>
+					<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+					<td class='timestamp'>4:49:15 PM</td>
+					<td class='step-details'><pre>org.testng.SkipException: Skipping execution for  :TC_01:Originator_Non340B_G
+	at driver.Driver.executeTestcase(Driver.java:80)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='50%'><span class='strong'>2</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='50%'>2</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='97.203%'><span class='strong'>139</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='2.797%'>4</span> others
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+</div>
+<!-- test view -->
+<div id='category-view' class='view hide'>
+
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+				
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Categories</h3>
+			<ul id='category-collection' class='category-collection'>
+				
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>Biosimilar_340B</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Dec 28, 2022 04:41:58 PM</td>
+										<td class='linked' test-id='1'>TC_01:Biosimilar_340B_G</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>Regression</span>
+						<span class='category-status right'>
+							<span class='label pass'>2</span>
+							<span class='label others'>2</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 2</span>
+							
+							<span class='label yellow darken-2 white-text'>Others: 2</span>
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Dec 28, 2022 04:41:58 PM</td>
+										<td class='linked' test-id='1'>TC_01:Biosimilar_340B_G</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Dec 28, 2022 04:45:39 PM</td>
+										<td class='linked' test-id='2'>TC_01:Biosimilar_Non340B_G</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Dec 28, 2022 04:49:15 PM</td>
+										<td class='linked' test-id='3'>TC_01:Originator_340B_G</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Dec 28, 2022 04:49:15 PM</td>
+										<td class='linked' test-id='4'>TC_01:Originator_Non340B_G</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>Biosimilar_Non340B</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Dec 28, 2022 04:45:39 PM</td>
+										<td class='linked' test-id='2'>TC_01:Biosimilar_Non340B_G</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>Originator_340B</span>
+						<span class='category-status right'>
+							<span class='label others'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							
+							
+							<span class='label yellow darken-2 white-text'>Others: 1</span>
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Dec 28, 2022 04:49:15 PM</td>
+										<td class='linked' test-id='3'>TC_01:Originator_340B_G</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>Originator_Non340B</span>
+						<span class='category-status right'>
+							<span class='label others'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							
+							
+							<span class='label yellow darken-2 white-text'>Others: 1</span>
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Dec 28, 2022 04:49:15 PM</td>
+										<td class='linked' test-id='4'>TC_01:Originator_Non340B_G</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- category view -->
+<div id='exception-view' class='view hide'>
+
+    <section id='controls'>
+        <div class='controls grey lighten-4'>
+            <!-- search -->
+            <div class='chip transparent' alt='Search Tests' title='Search Tests'>
+                <a href="#" class='search-div'>
+                    <i class='material-icons'>search</i> Search
+                </a>
+
+                <div class='input-field left hide'>
+                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+                </div>
+
+            </div>
+            <!-- search -->
+        </div>
+    </section>
+
+    <div class='subview-left left'>
+
+        <div class='view-summary'>
+            <h5>Exceptions</h3>
+                <ul id='exception-collection' class='exception-collection'>
+
+                        <li class='exception displayed active'>
+                            <div class='exception-heading'>
+                                <span class='exception-name'>org.testng.SkipException</span>
+                                <span class='exception-count right'><span class='label red lighten-1 white-text'>2</span></span>
+                            </div>
+                            <div class='exception-content hide'>
+                                <div class='exception-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                                    <tr>
+                                                        <td>Dec 28, 2022 04:49:15 PM</td>
+                                                        <td class='linked' test-id='3'>TC_01:Originator_340B_G</td>
+                                                        <td><pre><pre>org.testng.SkipException: Skipping execution for  :TC_01:Originator_340B_G
+	at driver.Driver.executeTestcase(Driver.java:80)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></pre></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Dec 28, 2022 04:49:15 PM</td>
+                                                        <td class='linked' test-id='4'>TC_01:Originator_Non340B_G</td>
+                                                        <td><pre><pre>org.testng.SkipException: Skipping execution for  :TC_01:Originator_Non340B_G
+	at driver.Driver.executeTestcase(Driver.java:80)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></pre></td>
+                                                    </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                </ul>
+        </div>
+    </div>
+
+    <div class='subview-right left'>
+        <div class='view-summary'>
+            <h5 class='exception-name'></h5>
+        </div>
+    </div>
+</div>
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>4</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>143</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Dec 28, 2022 04:41:58 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Dec 28, 2022 04:49:15 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 7m 17s+262ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel dashboard-environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>OS</td>
+								<td>Windows</td>
+							</tr>
+							<tr>
+								<td>Environment</td>
+								<td>https://pincaiqai.premierinc.com/</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+			<div class='col s6'>
+				<div class='card-panel dashboard-categories'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Others</th>
+							<th>Passed %</th>
+						</tr>
+						<tr>
+							<td>Biosimilar_340B</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>Regression</td>
+							<td>2</td>
+							<td>0</td>
+							<td>2</td>
+							<td>
+									50%
+							</td>
+						</tr>
+						<tr>
+							<td>Biosimilar_Non340B</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>Originator_340B</td>
+							<td>0</td>
+							<td>0</td>
+							<td>1</td>
+							<td>
+									0%
+							</td>
+						</tr>
+						<tr>
+							<td>Originator_Non340B</td>
+							<td>0</td>
+							<td>0</td>
+							<td>1</td>
+							<td>
+									0%
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 2,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 2,
+				exceptionsParent: 2,
+				
+				passChild: 139,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 4,
+				infoChild: 0,
+				exceptionsChild: 4,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 		</script>
+	</body>
+	
+</html>

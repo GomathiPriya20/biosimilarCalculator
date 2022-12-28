@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="events.TestAnnotation"/>
+  </listeners>
+  <test thread-count="5" name="Results(failed)">
+    <classes>
+      <class name="driver.Driver">
+        <methods>
+          <include name="executeTestcase" invocation-numbers="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"/>
+          <include name="Reports"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- driver.Driver -->
+    </classes>
+  </test> <!-- Results(failed) -->
+</suite> <!-- Failed suite [Suite] -->
