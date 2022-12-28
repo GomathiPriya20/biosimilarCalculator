@@ -62,6 +62,7 @@ public static void calculator(int iRowNumber, String sDataSheetName)
 						DataInputProvider.getCellData_ColName(iRowNumber, "HCPCScode", sDataSheetName))
 		*/
 				;
+				new GeneralDashboardPage().clickCalculatorMenu();
 				new CalculatorPage()
 						.selectAdrug_CalulatorPage(
 								DataInputProvider.getCellData_ColName(iRowNumber, "GroupName", sDataSheetName))
