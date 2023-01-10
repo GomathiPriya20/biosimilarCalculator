@@ -7,14 +7,16 @@ import services.WebDriverServiceImpl;
 
 public class LoginPage extends WebDriverServiceImpl{
 
-	public LoginPage typeUsername(String username) {
+	public LoginPage typeUsername(String username) throws InterruptedException {
 		type(getDriver().findElement(By.id("identifier")),username,"Username");
-		click(getDriver().findElement(By.xpath("//input[@value='Next']")),"Next");	
+		click(getDriver().findElement(By.xpath("//input[@value='Next']")),"Next");
+		Thread.sleep(3000);
 		return this;
 	}
 		
-	public LoginPage typePassword(String password) {
+	public LoginPage typePassword(String password) throws InterruptedException {
 		type(getDriver().findElement(By.id("password")),password,"Password");
+		Thread.sleep(3000);
 		return this;
 	}
 

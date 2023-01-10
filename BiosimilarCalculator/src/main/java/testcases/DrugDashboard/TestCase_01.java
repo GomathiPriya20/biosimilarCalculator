@@ -7,6 +7,8 @@ import pages.GeneralDashboardPage;
 import pages.LoginPage;
 import utils.DataInputProvider;
 
+// TC_01:DrugDashboard_Add_Mandatory
+
 public class TestCase_01 {
 
 	public static void calculator(int iRowNumber, String sDataSheetName)
@@ -26,7 +28,7 @@ public class TestCase_01 {
 				.clickPremierLogo()
 				.verifyPremierPage(DataInputProvider.getCellData_ColName(iRowNumber, "PremierURL", sDataSheetName));
 
-		new CalculatorPage().verifyCalulatorPage(
+		new CalculatorPage().verifyBlankCalulatorPage(
 				DataInputProvider.getCellData_ColName(iRowNumber, "CalculatorHeader", sDataSheetName),
 				DataInputProvider.getCellData_ColName(iRowNumber, "SelectaDrugHeader", sDataSheetName));
 

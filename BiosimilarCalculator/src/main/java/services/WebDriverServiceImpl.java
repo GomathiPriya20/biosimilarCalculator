@@ -1,15 +1,12 @@
 package services;
 
-import events.WebDriverEvents;
-
-import static org.testng.Assert.fail;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 import java.util.Set;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -20,20 +17,22 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.NoSuchFrameException;
 import org.openqa.selenium.NoSuchWindowException;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.OutputType;
+
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.MediaEntityModelProvider;
 import com.aventstack.extentreports.Status;
+
 import base.WebDriverService;
 import driver.Driver;
+import events.WebDriverEvents;
 
 public class WebDriverServiceImpl extends WebDriverEvents implements WebDriverService{
 
@@ -707,6 +706,27 @@ public class WebDriverServiceImpl extends WebDriverEvents implements WebDriverSe
 		} 
 	}
 
-	
+	// Checks if the file is downloaded to the mentioned path
+			public boolean isFileDownloaded(String downloadPath, String fileName) {
+				File dir = new File(downloadPath);
+				File[] dirContents = dir.listFiles();
+				int i = 1;
+				try {
+					while (i < dirContents.length) {
+						if (dirContents[i].getName().contains(fileName)) {
+							setReport().log(Status.PASS, "The downloaded filename contains " + fileName + " as expected",
+									screenshotCapture());
+							 dirContents[i].delete();
+							break;
+						} else
+							i++;
+					}
+				} catch (WebDriverException e) {
+					setReport().log(Status.FAIL, "Unknown exception occured while verifying the Text", screenshotCapture());
+					Driver.failCount++;
+					throw e;
+				}
+				return false;
+			}
 }
 
