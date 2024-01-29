@@ -7,6 +7,17 @@ import services.WebDriverServiceImpl;
 
 public class LoginPage extends WebDriverServiceImpl{
 
+	public LoginPage loginToApplication(String username, String password) throws InterruptedException {
+		type(getDriver().findElement(By.id("identifier")),username,"Username");
+		click(getDriver().findElement(By.xpath("//input[@value='Next']")),"Next");
+		Thread.sleep(3000);
+		type(getDriver().findElement(By.id("password")),password,"Password");
+		Thread.sleep(3000);
+		click(getDriver().findElement(By.xpath("//input[@value='Sign In']")),"Signin");	
+		Thread.sleep(5000);
+		return this;
+	}
+	
 	public LoginPage typeUsername(String username) throws InterruptedException {
 		type(getDriver().findElement(By.id("identifier")),username,"Username");
 		click(getDriver().findElement(By.xpath("//input[@value='Next']")),"Next");

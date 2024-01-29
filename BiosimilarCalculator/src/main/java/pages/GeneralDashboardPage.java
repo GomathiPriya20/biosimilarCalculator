@@ -10,10 +10,12 @@ public class GeneralDashboardPage extends WebDriverServiceImpl {
 	 * Verify the header portion in the general dashboard page
 	 */
 
-	public GeneralDashboardPage verifyHeaderPortion(String calculator, String drugsDashboard, String welcomeText,
+	public GeneralDashboardPage verifyHeaderPortion(String home, String calculator, String drugsDashboard,String userlist, String welcomeText,
 			String userName) {
+		verifyDisplayed(getDriver().findElement(By.linkText("Home")), home);
 		verifyDisplayed(getDriver().findElement(By.linkText("Calculator")), calculator);
 		verifyDisplayed(getDriver().findElement(By.linkText("Drugs Dashboard")), drugsDashboard);
+		verifyDisplayed(getDriver().findElement(By.linkText("UserList")), userlist);
 		verifyDisplayed(getDriver().findElement(By.xpath("//span[contains(text(),'Welcome, ')]")), welcomeText);
 		verifyDisplayed(getDriver().findElement(By.xpath("//span[contains(text(),' " + userName + "')]")), userName);
 
@@ -45,10 +47,26 @@ public class GeneralDashboardPage extends WebDriverServiceImpl {
 	public GeneralDashboardPage clickCalculatorMenu() throws InterruptedException {
 		click(getDriver().findElement(By.linkText("Calculator")), "Calculator Menu");
 		Thread.sleep(10000);
+		return this;
+	}
+	
+	public GeneralDashboardPage clickBiosimilarCalculatorMenu() throws InterruptedException {
+		click(getDriver().findElement(By.linkText("Biosimilar")), "Biosimilar Calculator Menu");
+		Thread.sleep(10000);
 		verifyDisplayed(
 				getDriver().findElement(
 						By.xpath("//div[@id='main']//h2[contains(text(),'Biosimilar Contract Advantage Calculator')]")),
-				"Calculator Header");
+				"Biosimilar Calculator Header");
+		return this;
+	}
+	
+	public GeneralDashboardPage clickIVIGCalculatorMenu() throws InterruptedException {
+		click(getDriver().findElement(By.linkText("IVIG")), "IVIG Calculator Menu");
+		Thread.sleep(10000);
+		verifyDisplayed(
+				getDriver().findElement(
+						By.xpath("//div[@id='main']//h2[contains(text(),'IVIG Contract Advantage Calculator')]")),
+				"IVIG Calculator Header");
 		return this;
 	}
 
