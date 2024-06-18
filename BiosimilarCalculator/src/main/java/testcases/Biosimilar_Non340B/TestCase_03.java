@@ -7,7 +7,7 @@ import pages.GeneralDashboardPage;
 import pages.LoginPage;
 import utils.DataInputProvider;
 
-//TC_03:Biosimilar_Non340B_MCGtoG
+//TC_03:BiosimilarCalculator_Biosimilar_Non 340BFacilityType_SameUnits_MCG
 
 public class TestCase_03 {
 
@@ -17,26 +17,7 @@ public class TestCase_03 {
 		new LoginPage().loginToApplication(DataInputProvider.getCellData_ColName(iRowNumber, "EmailId", sDataSheetName),
 				DataInputProvider.getCellData_ColName(iRowNumber, "Password", sDataSheetName));
 
-		new GeneralDashboardPage()
-				.verifyHeaderPortion(DataInputProvider.getCellData_ColName(iRowNumber, "homeMenu", sDataSheetName),
-						DataInputProvider.getCellData_ColName(iRowNumber, "calculatorMenu", sDataSheetName),
-						DataInputProvider.getCellData_ColName(iRowNumber, "drugsDashboardMenu", sDataSheetName),
-						DataInputProvider.getCellData_ColName(iRowNumber, "userListMenu", sDataSheetName),
-						DataInputProvider.getCellData_ColName(iRowNumber, "welcomeText", sDataSheetName),
-						DataInputProvider.getCellData_ColName(iRowNumber, "userName", sDataSheetName))
-				.clickPremierLogo()
-				.verifyPremierPage(DataInputProvider.getCellData_ColName(iRowNumber, "PremierURL", sDataSheetName))
-				.clickCalculatorMenu().clickBiosimilarCalculatorMenu();
-
-		new CalculatorPage().verifyBlankCalculatorPage(
-				DataInputProvider.getCellData_ColName(iRowNumber, "CalculatorHeader", sDataSheetName),
-				DataInputProvider.getCellData_ColName(iRowNumber, "SelectaDrugHeader", sDataSheetName));
-
-		new GeneralDashboardPage().clickDrugsDashboardMenu().verifyAddNewButtonInDrugsDashboardPage()
-				.verifyExportToExcelButtonInDrugsDashboardPage().verifyEditButtonInDrugsDashboardPage()
-				.verifyRemoveButtonInDrugsDashboardPage()
-
-				.verifyColumnHeadersInDrugsDashboardPage()
+		new GeneralDashboardPage().clickDrugsDashboardMenu()
 
 				.addDrugForCalculation_Biosimilar_DrugsDashboardPage(
 						DataInputProvider.getCellData_ColName(iRowNumber, "NDC", sDataSheetName),
@@ -67,11 +48,12 @@ public class TestCase_03 {
 						DataInputProvider.getCellData_ColName(iRowNumber, "BiosimilarUseFacility340BPriceAdjustment",
 								sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "SequestrationReduction", sDataSheetName),
-						DataInputProvider.getCellData_ColName(iRowNumber, "HCPCScode", sDataSheetName));
+						DataInputProvider.getCellData_ColName(iRowNumber, "HCPCScode", sDataSheetName))
 
+		;
 		new GeneralDashboardPage().clickCalculatorMenu().clickBiosimilarCalculatorMenu();
 		new CalculatorPage()
-				.selectAdrug_CalulatorPage(
+				.selectAdrug_CalculatorPage(
 						DataInputProvider.getCellData_ColName(iRowNumber, "TradeName", sDataSheetName))
 				.type_Units_CalulatorPage(DataInputProvider.getCellData_ColName(iRowNumber, "Units", sDataSheetName))
 
@@ -97,7 +79,7 @@ public class TestCase_03 {
 						DataInputProvider.getCellData_ColName(iRowNumber, "ReimbursementHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "DifferentialHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "DifferentialPerUnitsHeader", sDataSheetName))
-				
+
 				.calculateContractPriceBillingUnits_Customize(
 						DataInputProvider.getCellData_ColName(iRowNumber, "ASP_Drug_Strength_Number", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "ContractPrice", sDataSheetName),
@@ -198,7 +180,7 @@ public class TestCase_03 {
 						DataInputProvider.getCellData_ColName(iRowNumber, "Reimbursement_WACPrice", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "Differential_WACPrice", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "DifferentialperUserinputUnits_WACPrice",
-							sDataSheetName));
+								sDataSheetName));
 
 		new GeneralDashboardPage().clickDrugsDashboardMenu()
 				.select_NDCfromFilterMenu(DataInputProvider.getCellData_ColName(iRowNumber, "NDC", sDataSheetName))

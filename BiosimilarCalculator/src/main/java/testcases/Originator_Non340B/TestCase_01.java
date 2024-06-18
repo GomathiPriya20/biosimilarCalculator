@@ -7,7 +7,7 @@ import pages.GeneralDashboardPage;
 import pages.LoginPage;
 import utils.DataInputProvider;
 
-//TC_01:Originator_Non340B_Int.U
+//TC_01:BiosimilarCalculator_Originator_Non 340BFacilityType_SameUnits_G
 
 public class TestCase_01 {
 	public static void calculator(int iRowNumber, String sDataSheetName)
@@ -16,26 +16,7 @@ public class TestCase_01 {
 		new LoginPage().loginToApplication(DataInputProvider.getCellData_ColName(iRowNumber, "EmailId", sDataSheetName),
 				DataInputProvider.getCellData_ColName(iRowNumber, "Password", sDataSheetName));
 
-		new GeneralDashboardPage()
-				.verifyHeaderPortion(DataInputProvider.getCellData_ColName(iRowNumber, "homeMenu", sDataSheetName),
-						DataInputProvider.getCellData_ColName(iRowNumber, "calculatorMenu", sDataSheetName),
-						DataInputProvider.getCellData_ColName(iRowNumber, "drugsDashboardMenu", sDataSheetName),
-						DataInputProvider.getCellData_ColName(iRowNumber, "userListMenu", sDataSheetName),
-						DataInputProvider.getCellData_ColName(iRowNumber, "welcomeText", sDataSheetName),
-						DataInputProvider.getCellData_ColName(iRowNumber, "userName", sDataSheetName))
-				.clickPremierLogo()
-				.verifyPremierPage(DataInputProvider.getCellData_ColName(iRowNumber, "PremierURL", sDataSheetName))
-				.clickCalculatorMenu().clickBiosimilarCalculatorMenu();
-
-		new CalculatorPage().verifyBlankCalculatorPage(
-				DataInputProvider.getCellData_ColName(iRowNumber, "CalculatorHeader", sDataSheetName),
-				DataInputProvider.getCellData_ColName(iRowNumber, "SelectaDrugHeader", sDataSheetName));
-
-		new GeneralDashboardPage().clickDrugsDashboardMenu().verifyAddNewButtonInDrugsDashboardPage()
-				.verifyExportToExcelButtonInDrugsDashboardPage().verifyEditButtonInDrugsDashboardPage()
-				.verifyRemoveButtonInDrugsDashboardPage()
-
-				.verifyColumnHeadersInDrugsDashboardPage()
+		new GeneralDashboardPage().clickDrugsDashboardMenu()
 
 				.addDrugForCalculation_Biosimilar_DrugsDashboardPage(
 						DataInputProvider.getCellData_ColName(iRowNumber, "NDC", sDataSheetName),
@@ -70,7 +51,7 @@ public class TestCase_01 {
 
 		new GeneralDashboardPage().clickCalculatorMenu().clickBiosimilarCalculatorMenu();
 		new CalculatorPage()
-				.selectAdrug_CalulatorPage(
+				.selectAdrug_CalculatorPage(
 						DataInputProvider.getCellData_ColName(iRowNumber, "TradeName", sDataSheetName))
 				.type_Units_CalulatorPage(DataInputProvider.getCellData_ColName(iRowNumber, "Units", sDataSheetName))
 

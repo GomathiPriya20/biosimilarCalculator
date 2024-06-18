@@ -10,11 +10,12 @@ public class GeneralDashboardPage extends WebDriverServiceImpl {
 	 * Verify the header portion in the general dashboard page
 	 */
 
-	public GeneralDashboardPage verifyHeaderPortion(String home, String calculator, String drugsDashboard,String userlist, String welcomeText,
+	public GeneralDashboardPage verifyHeaderPortion(String home, String calculator, String drugsDashboard,String averageSalesPrice,String userlist, String welcomeText,
 			String userName) {
 		verifyDisplayed(getDriver().findElement(By.linkText("Home")), home);
 		verifyDisplayed(getDriver().findElement(By.linkText("Calculator")), calculator);
 		verifyDisplayed(getDriver().findElement(By.linkText("Drugs Dashboard")), drugsDashboard);
+		verifyDisplayed(getDriver().findElement(By.linkText("Average Sales Price")), drugsDashboard);
 		verifyDisplayed(getDriver().findElement(By.linkText("UserList")), userlist);
 		verifyDisplayed(getDriver().findElement(By.xpath("//span[contains(text(),'Welcome, ')]")), welcomeText);
 		verifyDisplayed(getDriver().findElement(By.xpath("//span[contains(text(),' " + userName + "')]")), userName);
@@ -44,6 +45,15 @@ public class GeneralDashboardPage extends WebDriverServiceImpl {
 		return this;
 	}
 
+	public GeneralDashboardPage verifyCalculatorMenuOptions(String biosimilarCalculatorMenu,
+			String IVIGcalculatorMenu) {
+		verifyDisplayed(getDriver().findElement(By.xpath("//button[contains(text(),'Biosimilar Calculator')]")),
+				biosimilarCalculatorMenu);
+		verifyDisplayed(getDriver().findElement(By.xpath("//button[contains(text(),'IVIG Calculator')]")),
+				IVIGcalculatorMenu);
+		return this;
+	}
+	
 	public GeneralDashboardPage clickCalculatorMenu() throws InterruptedException {
 		click(getDriver().findElement(By.linkText("Calculator")), "Calculator Menu");
 		Thread.sleep(10000);
@@ -76,6 +86,15 @@ public class GeneralDashboardPage extends WebDriverServiceImpl {
 		verifyDisplayed(getDriver().findElement(By.xpath("//div[@id='main']//h2[contains(text(),'Drugs Dashboard')]")),
 				"Drugs Dashboard Header");
 		return new DashboardPage();
+	}
+	
+	public UserlistPage clickUserlistMenu() throws InterruptedException {
+		click(getDriver().findElement(By.linkText("UserList")), "UserList Menu");
+		Thread.sleep(10000);
+		verifyDisplayed(
+				getDriver().findElement(By.xpath("//app-users-list//h1[contains(text(),'Users with their roles')]")),
+				"User List Header");
+		return new UserlistPage();
 	}
 
 }

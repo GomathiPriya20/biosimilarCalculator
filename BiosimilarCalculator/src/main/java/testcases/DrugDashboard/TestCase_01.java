@@ -28,9 +28,11 @@ public class TestCase_01 {
 				.verifyHeaderPortion(DataInputProvider.getCellData_ColName(iRowNumber, "homeMenu", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "calculatorMenu", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "drugsDashboardMenu", sDataSheetName),
+						DataInputProvider.getCellData_ColName(iRowNumber, "averageSalesPriceMenu", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "userListMenu", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "welcomeText", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "userName", sDataSheetName))
+				
 				.clickPremierLogo()
 				.verifyPremierPage(DataInputProvider.getCellData_ColName(iRowNumber, "PremierURL", sDataSheetName))
 				.clickCalculatorMenu().clickBiosimilarCalculatorMenu();;

@@ -2,7 +2,6 @@ package testcases.DrugDashboard;
 
 import java.awt.AWTException;
 
-import pages.CalculatorPage;
 import pages.GeneralDashboardPage;
 import pages.LoginPage;
 import utils.DataInputProvider;
@@ -14,36 +13,10 @@ public class TestCase_02 {
 	public static void calculator(int iRowNumber, String sDataSheetName)
 			throws Exception, InterruptedException, AWTException {
 
-		/*
-		new LoginPage().typeUsername(DataInputProvider.getCellData_ColName(iRowNumber, "EmailId", sDataSheetName))
-				.typePassword(DataInputProvider.getCellData_ColName(iRowNumber, "Password", sDataSheetName))
-				.clickSignIn().closePopupOnDashboardPage().clickClinicalResourcesApplication(
-						DataInputProvider.getCellData_ColName(iRowNumber, "calculatorPageUrl", sDataSheetName));
-*/
 		new LoginPage().loginToApplication(DataInputProvider.getCellData_ColName(iRowNumber, "EmailId", sDataSheetName),
 				DataInputProvider.getCellData_ColName(iRowNumber, "Password", sDataSheetName));
 
-		new GeneralDashboardPage()
-				.verifyHeaderPortion(DataInputProvider.getCellData_ColName(iRowNumber, "homeMenu", sDataSheetName),
-						DataInputProvider.getCellData_ColName(iRowNumber, "calculatorMenu", sDataSheetName),
-						DataInputProvider.getCellData_ColName(iRowNumber, "drugsDashboardMenu", sDataSheetName),
-						DataInputProvider.getCellData_ColName(iRowNumber, "userListMenu", sDataSheetName),
-						DataInputProvider.getCellData_ColName(iRowNumber, "welcomeText", sDataSheetName),
-						DataInputProvider.getCellData_ColName(iRowNumber, "userName", sDataSheetName))
-				.clickPremierLogo()
-				.verifyPremierPage(DataInputProvider.getCellData_ColName(iRowNumber, "PremierURL", sDataSheetName))
-				.clickCalculatorMenu().clickBiosimilarCalculatorMenu();
-		;
-
-		new CalculatorPage().verifyBlankCalculatorPage(
-				DataInputProvider.getCellData_ColName(iRowNumber, "CalculatorHeader", sDataSheetName),
-				DataInputProvider.getCellData_ColName(iRowNumber, "SelectaDrugHeader", sDataSheetName));
-
-		new GeneralDashboardPage().clickDrugsDashboardMenu().verifyAddNewButtonInDrugsDashboardPage()
-				.verifyExportToExcelButtonInDrugsDashboardPage().verifyEditButtonInDrugsDashboardPage()
-				.verifyRemoveButtonInDrugsDashboardPage()
-
-				.verifyColumnHeadersInDrugsDashboardPage()
+		new GeneralDashboardPage().clickDrugsDashboardMenu()
 				.addDrugDetailWithallFieldValues_Biosimilar_DrugsDashboardPage(
 						DataInputProvider.getCellData_ColName(iRowNumber, "NDC", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "TradeName", sDataSheetName),

@@ -63,9 +63,20 @@ public class Driver extends PreAndPost {
 			sTestClassName = "testcases.Originator_340B.".concat(sTestClassName);
 		} else if (sCategory.equalsIgnoreCase("Originator_Non340B")) {
 			sTestClassName = "testcases.Originator_Non340B.".concat(sTestClassName);
-		} else {
+		} else if (sCategory.equalsIgnoreCase("DrugDashboard")) {
 			sTestClassName = "testcases.DrugDashboard.".concat(sTestClassName);
+		} else if (sCategory.equalsIgnoreCase("Calculator")) {
+			sTestClassName = "testcases.Calculator.".concat(sTestClassName);
+		} else if (sCategory.equalsIgnoreCase("IVIG_Conversions")) {
+			sTestClassName = "testcases.IVIG_Conversions.".concat(sTestClassName);
+		} else if (sCategory.equalsIgnoreCase("AcquisitionCostSavingCalculator")) {
+			sTestClassName = "testcases.AcquisitionCostSavingCalculator.".concat(sTestClassName);
+		} else if (sCategory.equalsIgnoreCase("AverageSalesPrice")) {
+			sTestClassName = "testcases.AverageSalesPrice.".concat(sTestClassName);
+		} else {
+			sTestClassName = "testcases.Userlist.".concat(sTestClassName);
 		}
+
 		// Create instance of the class during run time
 		Class<?> cls = Class.forName(sTestClassName);
 		Object clsInstance = (Object) cls.getDeclaredConstructor().newInstance();
