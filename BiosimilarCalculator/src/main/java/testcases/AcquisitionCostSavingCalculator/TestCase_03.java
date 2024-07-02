@@ -36,7 +36,7 @@ public class TestCase_03 {
 				.clearFilterResultsInTable2(
 						DataInputProvider.getCellData_ColName(iRowNumber, "TradeNameHeader", sDataSheetName))
 
-				// 3. Adjusted Package Size
+				// 3. Adjusted Package Size/Dose per vial
 				.search_FieldName_InTable2(
 						DataInputProvider.getCellData_ColName(iRowNumber, "AdjustedPackageSizeHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "Adjusted_PackageSize", sDataSheetName))

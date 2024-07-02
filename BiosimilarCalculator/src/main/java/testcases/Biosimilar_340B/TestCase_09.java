@@ -45,7 +45,10 @@ public class TestCase_09 {
 				DataInputProvider.getCellData_ColName(iRowNumber, "SequestrationReduction", sDataSheetName),
 				DataInputProvider.getCellData_ColName(iRowNumber, "HCPCScode", sDataSheetName))
 
-		;
+				.select_NDCfromFilterMenu(DataInputProvider.getCellData_ColName(iRowNumber, "NDC", sDataSheetName))
+				.update_CreatedOnToExcel(
+						DataInputProvider.getCellData_ColName(iRowNumber, "SheetName", sDataSheetName));
+
 		new GeneralDashboardPage().clickCalculatorMenu().clickBiosimilarCalculatorMenu();
 		new CalculatorPage()
 				.selectAdrug_CalculatorPage(
@@ -133,6 +136,7 @@ public class TestCase_09 {
 						DataInputProvider.getCellData_ColName(iRowNumber, "GenericName", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "GroupName", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "IsOriginator", sDataSheetName),
+						DataInputProvider.getCellData_ColName(iRowNumber, "CreatedOn", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "ContractPrice", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "ContractPriceType", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "The_340BPrice", sDataSheetName),

@@ -39,7 +39,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 
 	public CalculatorPage verifyTableHeadersInCalulatorPage_340B(String TradeNameHeader, String NDCHeader,
 			String FormHeader, String AdjustedPackageSizeHeader, String PackageQuantityHeader, String GenericNameHeader,
-			String BiosimilarGroupHeader, String IsOriginatorHeader, String ContractPriceHeader,
+			String BiosimilarGroupHeader, String IsOriginatorHeader, String LastUpdatedTimeHeader, String ContractPriceHeader,
 			String ContractPriceTypeHeader, String The_340BPriceHeader, String WACPriceHeader,
 			String ContractStrengthHeader, String ASPHeader, String ASPStrengthHeader, String ContractUnitsHeader,
 			String ReimbursementHeader, String DifferentialHeader, String DifferentialPerUnitsHeader)
@@ -80,13 +80,21 @@ public class CalculatorPage extends WebDriverServiceImpl {
 				getDriver().findElement(
 						By.xpath("//th[@aria-label='Is Originator']//span[contains(text(),'Is Originator')]")),
 				IsOriginatorHeader);
-
-		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver()
-				.findElement(By.xpath("//th[@aria-label='Contract Price']//span[contains(text(),'Contract Price')]")));
+		
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver().findElement(
+				By.xpath("//th[@aria-label='Last Updated Time']//span[contains(text(),'Last Updated Time')]")));
 		Thread.sleep(3000);
 		verifyDisplayed(
 				getDriver().findElement(
-						By.xpath("//th[@aria-label='Contract Price']//span[contains(text(),'Contract Price')]")),
+						By.xpath("//th[@aria-label='Last Updated Time']//span[contains(text(),'Last Updated Time')]")),
+				LastUpdatedTimeHeader);
+		
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver().findElement(
+				By.xpath("(//th[@aria-label='Contract Price']//span[contains(text(),'Contract Price')])[1]")));
+		Thread.sleep(3000);
+		verifyDisplayed(
+				getDriver().findElement(
+						By.xpath("(//th[@aria-label='Contract Price']//span[contains(text(),'Contract Price')])[1]")),
 				ContractPriceHeader);
 
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver().findElement(
@@ -152,7 +160,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 				getDriver().findElement(
 						By.xpath("//th[@aria-label='Contract Price']//span[contains(text(),'340B Price')]")),
 				The_340BPriceHeader);
-
+		
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
 				getDriver().findElement(By.xpath(
 						"//th[@aria-label='MCP_ContractUnit_ContractPrice_Reimbursement']//span[contains(text(),'Reimbursement')]")));
@@ -163,18 +171,18 @@ public class CalculatorPage extends WebDriverServiceImpl {
 
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
 				getDriver().findElement(By.xpath(
-						"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential']//span[contains(text(),'Differential')]")));
+						"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential']//span[contains(text(),'Revenue ')]")));
 		Thread.sleep(3000);
 		verifyDisplayed(getDriver().findElement(By.xpath(
-				"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential']//span[contains(text(),'Differential')]")),
+				"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential']//span[contains(text(),'Revenue ')]")),
 				DifferentialHeader);
 
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
 				getDriver().findElement(By.xpath(
-						"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential_Per_Quantity']//span[contains(text(),'Differential Per Units')]")));
+						"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential_Per_Quantity']//span[contains(@title,'Differential Contract Unit Per Units formula')]")));
 		Thread.sleep(3000);
 		verifyDisplayed(getDriver().findElement(By.xpath(
-				"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential_Per_Quantity']//span[contains(text(),'Differential Per Units')]")),
+				"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential_Per_Quantity']//span[contains(@title,'Differential Contract Unit Per Units formula')]")),
 				DifferentialPerUnitsHeader);
 
 		// wac price
@@ -196,26 +204,26 @@ public class CalculatorPage extends WebDriverServiceImpl {
 
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
 				getDriver().findElement(By.xpath(
-						"//th[@aria-label='MCP_ContractUnit_WAC_Price_Differential']//span[contains(text(),'Differential')]")));
+						"//th[@aria-label='MCP_ContractUnit_WAC_Price_Differential']//span[contains(text(),'Revenue ')]")));
 		Thread.sleep(3000);
 		verifyDisplayed(getDriver().findElement(By.xpath(
-				"//th[@aria-label='MCP_ContractUnit_WAC_Price_Differential']//span[contains(text(),'Differential')]")),
+				"//th[@aria-label='MCP_ContractUnit_WAC_Price_Differential']//span[contains(text(),'Revenue ')]")),
 				DifferentialHeader);
 
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
 				getDriver().findElement(By.xpath(
-						"//th[@aria-label='MCP_ContractUnit_WAC_Price_Differential_Per_Quantity']//span[contains(text(),'Differential Per Units')]")));
+						"//th[@aria-label='MCP_ContractUnit_WAC_Price_Differential_Per_Quantity']//span[contains(@title,'Differential Contract Unit Per Units formula')]")));
 		Thread.sleep(3000);
 		verifyDisplayed(getDriver().findElement(By.xpath(
-				"//th[@aria-label='MCP_ContractUnit_WAC_Price_Differential_Per_Quantity']//span[contains(text(),'Differential Per Units')]")),
+				"//th[@aria-label='MCP_ContractUnit_WAC_Price_Differential_Per_Quantity']//span[contains(@title,'Differential Contract Unit Per Units formula')]")),
 				DifferentialPerUnitsHeader);
-
+	
 		return this;
 	}
 
 	public CalculatorPage verifyTableHeadersInCalulatorPage_Non340B(String TradeNameHeader, String NDCHeader,
 			String FormHeader, String AdjustedPackageSizeHeader, String PackageQuantityHeader, String GenericNameHeader,
-			String BiosimilarGroupHeader, String IsOriginatorHeader, String ContractPriceHeader,
+			String BiosimilarGroupHeader, String IsOriginatorHeader, String LastUpdatedTimeHeader, String ContractPriceHeader,
 			String ContractPriceTypeHeader, String The_340BPriceHeader, String WACPriceHeader,
 			String ContractStrengthHeader, String ASPHeader, String ASPStrengthHeader, String ContractUnitsHeader,
 			String ReimbursementHeader, String DifferentialHeader, String DifferentialPerUnitsHeader)
@@ -257,6 +265,14 @@ public class CalculatorPage extends WebDriverServiceImpl {
 						By.xpath("//th[@aria-label='Is Originator']//span[contains(text(),'Is Originator')]")),
 				IsOriginatorHeader);
 
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver().findElement(
+				By.xpath("//th[@aria-label='Last Updated Time']//span[contains(text(),'Last Updated Time')]")));
+		Thread.sleep(3000);
+		verifyDisplayed(
+				getDriver().findElement(
+						By.xpath("//th[@aria-label='Last Updated Time']//span[contains(text(),'Last Updated Time')]")),
+				LastUpdatedTimeHeader);
+		
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver().findElement(
 				By.xpath("(//th[@aria-label='Contract Price']//span[contains(text(),'Contract Price')])[1]")));
 		Thread.sleep(3000);
@@ -328,7 +344,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 				getDriver().findElement(
 						By.xpath("(//th[@aria-label='Contract Price']//span[contains(text(),'Contract Price')])[2]")),
 				ContractPriceHeader);
-
+		
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
 				getDriver().findElement(By.xpath(
 						"//th[@aria-label='MCP_ContractUnit_ContractPrice_Reimbursement']//span[contains(text(),'Reimbursement')]")));
@@ -339,20 +355,21 @@ public class CalculatorPage extends WebDriverServiceImpl {
 
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
 				getDriver().findElement(By.xpath(
-						"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential']//span[contains(text(),'Differential')]")));
+						"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential']//span[contains(text(),'Revenue ')]")));
 		Thread.sleep(3000);
 		verifyDisplayed(getDriver().findElement(By.xpath(
-				"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential']//span[contains(text(),'Differential')]")),
+				"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential']//span[contains(text(),'Revenue ')]")),
 				DifferentialHeader);
 
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
 				getDriver().findElement(By.xpath(
-						"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential_Per_Quantity']//span[contains(text(),'Differential Per Units')]")));
+						"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential_Per_Quantity']//span[contains(@title,'Differential Contract Unit Per Units formula')]")));
 		Thread.sleep(3000);
 		verifyDisplayed(getDriver().findElement(By.xpath(
-				"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential_Per_Quantity']//span[contains(text(),'Differential Per Units')]")),
+				"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential_Per_Quantity']//span[contains(@title,'Differential Contract Unit Per Units formula')]")),
 				DifferentialPerUnitsHeader);
 
+		
 		// wac price
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver()
 				.findElement(By.xpath("(//th[@aria-label='WAC Price']//span[contains(text(),'WAC Price')])[2]")));
@@ -372,18 +389,18 @@ public class CalculatorPage extends WebDriverServiceImpl {
 
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
 				getDriver().findElement(By.xpath(
-						"//th[@aria-label='MCP_ContractUnit_WAC_Price_Differential']//span[contains(text(),'Differential')]")));
+						"//th[@aria-label='MCP_ContractUnit_WAC_Price_Differential']//span[contains(text(),'Revenue ')]")));
 		Thread.sleep(3000);
 		verifyDisplayed(getDriver().findElement(By.xpath(
-				"//th[@aria-label='MCP_ContractUnit_WAC_Price_Differential']//span[contains(text(),'Differential')]")),
+				"//th[@aria-label='MCP_ContractUnit_WAC_Price_Differential']//span[contains(text(),'Revenue ')]")),
 				DifferentialHeader);
 
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
 				getDriver().findElement(By.xpath(
-						"//th[@aria-label='MCP_ContractUnit_WAC_Price_Differential_Per_Quantity']//span[contains(text(),'Differential Per Units')]")));
+						"//th[@aria-label='MCP_ContractUnit_WAC_Price_Differential_Per_Quantity']//span[contains(@title,'Differential Contract Unit Per Units formula')]")));
 		Thread.sleep(3000);
 		verifyDisplayed(getDriver().findElement(By.xpath(
-				"//th[@aria-label='MCP_ContractUnit_WAC_Price_Differential_Per_Quantity']//span[contains(text(),'Differential Per Units')]")),
+				"//th[@aria-label='MCP_ContractUnit_WAC_Price_Differential_Per_Quantity']//span[contains(@title,'Differential Contract Unit Per Units formula')]")),
 				DifferentialPerUnitsHeader);
 
 		return this;
@@ -1519,7 +1536,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 
 	public CalculatorPage verifyTableValuesForSpecificNDCInCalulatorPage(String TradeName, String NDC, String Form,
 			String AdjustedPackageSize, String PackageQuantity, String GenericName, String BiosimilarGroup,
-			String IsOriginator, String ContractPrice, String ContractPriceType, String The_340BPrice, String WACPrice,
+			String IsOriginator, String CreatedOn, String ContractPrice, String ContractPriceType, String The_340BPrice, String WACPrice,
 			String Drug_Strength_Number, String Drug_Strength_Units, String Drug_Strength_Volume, String Drug_Form_Code,
 			String ASP, String ASP_Drug_Strength_Number, String ASP_Drug_Strength_Units, String Reimbursement_340BPrice,
 			String Differential_340BPrice, String DifferentialPerUnits_340BPrice, String Reimbursement_WACPrice,
@@ -1551,14 +1568,20 @@ public class CalculatorPage extends WebDriverServiceImpl {
 		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='7']")).getText(),
 				IsOriginator, "IsOriginator");
 
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver()
+				.findElement(By.xpath("//th[@aria-label='Last Updated Time']//span[contains(text(),'Last Updated Time')]")));
+		Thread.sleep(3000);
+		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='8']"))
+				.getAttribute("textContent"), CreatedOn, "Last Updated Time");
+		
 		Thread.sleep(3000);
 		String formatted_ContractPriceWithComma = df.format(new BigDecimal(ContractPrice));
 		String ContractPricewith$ = "$" + formatted_ContractPriceWithComma;
 		System.out.println("ContractPricewith$: " + ContractPricewith$);
-		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='8']")).getText(),
+		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='9']")).getText(),
 				ContractPricewith$, "ContractPrice");
 
-		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='9']")).getText(),
+		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='10']")).getText(),
 				ContractPriceType, "ContractPriceType");
 
 		Thread.sleep(3000);
@@ -1566,7 +1589,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 		// System.out.println(" The_340BPrice_format: " + The_340BPrice_format);
 		String The_340BPricewith$ = "$" + The_340BPrice_format;
 		System.out.println("The_340BPricewith$" + The_340BPricewith$);
-		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='10']")).getText(),
+		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='11']")).getText(),
 				The_340BPricewith$, "The_340BPrice");
 
 		Thread.sleep(3000);
@@ -1576,7 +1599,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver()
 				.findElement(By.xpath("(//th[@aria-label='WAC Price']//span[contains(text(),'WAC Price')])[1]")));
 		Thread.sleep(3000);
-		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='11']")).getText(),
+		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='12']")).getText(),
 				Formatted_WACPricewith$, "WACPrice");
 		Thread.sleep(3000);
 
@@ -1587,7 +1610,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 				By.xpath("//th[@aria-label='Contract Strength']//span[contains(text(),'Contract Strength')]")));
 		Thread.sleep(3000);
 		verifyExactContent(
-				getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='12']")).getText()
+				getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='13']")).getText()
 						.replaceAll("\\s", "").replaceAll("\\p{P}", ""),
 				contractStrength.replaceAll("\\s", "").replaceAll("\\p{P}", ""), "Contract Strength");
 
@@ -1598,7 +1621,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
 				getDriver().findElement(By.xpath("//th[@aria-label='ASP']//span[contains(text(),'ASP')]")));
 		Thread.sleep(3000);
-		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='13']")).getText(),
+		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='14']")).getText(),
 				ASPwith$, "ASP");
 
 		String ASPStrength = ASP_Drug_Strength_Number + ASP_Drug_Strength_Units;
@@ -1607,7 +1630,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver()
 				.findElement(By.xpath("//th[@aria-label='ASP Strength']//span[contains(text(),'ASP Strength')]")));
 		Thread.sleep(3000);
-		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='14']")).getText(),
+		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='15']")).getText(),
 				ASPStrength, "ASPStrength");
 
 		Thread.sleep(3000);
@@ -1621,7 +1644,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 				getDriver().findElement(By.xpath(
 						"//th[@aria-label='MCP_ContractUnit_ContractPrice_Reimbursement']//span[contains(text(),'Reimbursement')]")));
 		Thread.sleep(3000);
-		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='15']")).getText(),
+		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='16']")).getText(),
 				Reimbursement_340BPricewith$, "Reimbursement - 340B/Contract Price");
 
 		Thread.sleep(3000);
@@ -1630,9 +1653,9 @@ public class CalculatorPage extends WebDriverServiceImpl {
 		System.out.println("Differential_340BPricewith$" + Differential_340BPricewith$);
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
 				getDriver().findElement(By.xpath(
-						"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential']//span[contains(text(),'Differential')]")));
+						"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential']//span[contains(text(),'Revenue')]")));
 		Thread.sleep(3000);
-		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='16']")).getText(),
+		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='17']")).getText(),
 				Differential_340BPricewith$, "Differential - 340B/Contract Price");
 
 		Thread.sleep(3000);
@@ -1642,9 +1665,9 @@ public class CalculatorPage extends WebDriverServiceImpl {
 		System.out.println("DifferentialPerUnits_340BPricewith$" + DifferentialPerUnits_340BPricewith$);
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
 				getDriver().findElement(By.xpath(
-						"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential_Per_Quantity']//span[contains(text(),'Differential Per Units')]")));
+						"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential_Per_Quantity']//span[contains(@title,'Differential Contract Unit Per Units formula')]")));
 		Thread.sleep(3000);
-		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='17']")).getText(),
+		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='18']")).getText(),
 				DifferentialPerUnits_340BPricewith$, "DifferentialPerUnitsHeader - 340B/Contract Price");
 
 		Thread.sleep(3000);
@@ -1658,7 +1681,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 				getDriver().findElement(By.xpath(
 						"//th[@aria-label='MCP_ContractUnit_WAC_Price_Reimbursement']//span[contains(text(),'Reimbursement')]")));
 		Thread.sleep(3000);
-		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='18']")).getText(),
+		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='19']")).getText(),
 				Reimbursement_WACPricewith$, "Reimbursement_WACPrice");
 
 		Thread.sleep(3000);
@@ -1667,9 +1690,9 @@ public class CalculatorPage extends WebDriverServiceImpl {
 		System.out.println("Differential_WACPricewith$" + Differential_WACPricewith$);
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
 				getDriver().findElement(By.xpath(
-						"//th[@aria-label='MCP_ContractUnit_WAC_Price_Differential']//span[contains(text(),'Differential')]")));
+						"//th[@aria-label='MCP_ContractUnit_WAC_Price_Differential']//span[contains(text(),'Revenue')]")));
 		Thread.sleep(3000);
-		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='19']")).getText(),
+		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='20']")).getText(),
 				Differential_WACPricewith$, "Differential_WACPrice");
 
 		Thread.sleep(3000);
@@ -1679,9 +1702,9 @@ public class CalculatorPage extends WebDriverServiceImpl {
 		System.out.println("DifferentialPerUnits_WACPricewith$" + DifferentialPerUnits_WACPricewith$);
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
 				getDriver().findElement(By.xpath(
-						"//th[@aria-label='MCP_ContractUnit_WAC_Price_Differential_Per_Quantity']//span[contains(text(),'Differential Per Units')]")));
+						"//th[@aria-label='MCP_ContractUnit_WAC_Price_Differential_Per_Quantity']//span[contains(@title,'Differential Contract Unit Per Units formula')]")));
 		Thread.sleep(3000);
-		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='20']")).getText(),
+		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='21']")).getText(),
 				DifferentialPerUnits_WACPricewith$, "DifferentialPerUnits_WACPrice");
 
 		return this;
@@ -1689,7 +1712,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 
 	public CalculatorPage verifyBasicTableValuesForSpecificNDCInBiosimilarCalulatorPage(String TradeName, String NDC,
 			String Form, String AdjustedPackageSize, String PackageQuantity, String GenericName, String BiosimilarGroup,
-			String IsOriginator, String ContractPrice, String ContractPriceType, String The_340BPrice, String WACPrice,
+			String IsOriginator, String CreatedOn, String ContractPrice, String ContractPriceType, String The_340BPrice, String WACPrice,
 			String Drug_Strength_Number, String Drug_Strength_Units, String Drug_Strength_Volume, String Drug_Form_Code,
 			String ASP, String ASP_Drug_Strength_Number, String ASP_Drug_Strength_Units) throws InterruptedException {
 
@@ -1718,20 +1741,23 @@ public class CalculatorPage extends WebDriverServiceImpl {
 
 		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='7']")).getText(),
 				IsOriginator, "IsOriginator");
+		
+		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='8']")).getAttribute("textContent"),
+				CreatedOn, "Last Updated Time");
 
 		Thread.sleep(3000);
 		String formatted_ContractPriceWithComma = df.format(new BigDecimal(ContractPrice));
 		String ContractPricewith$ = "$" + formatted_ContractPriceWithComma;
 		System.out.println("ContractPricewith$: " + ContractPricewith$);
-		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='8']")).getText(),
+		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='9']")).getText(),
 				ContractPricewith$, "ContractPrice");
 
-		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='9']")).getText(),
+		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='10']")).getText(),
 				ContractPriceType, "ContractPriceType");
 
 		Thread.sleep(3000);
 		if (The_340BPrice.equalsIgnoreCase("0")) {
-			verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='10']")).getText(),
+			verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='11']")).getText(),
 					The_340BPrice, "The_340BPrice");
 
 		} else {
@@ -1739,7 +1765,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 			String The_340BPricewith$ = "$" + The_340BPrice_format;
 			System.out.println("The_340BPricewith$" + The_340BPricewith$);
 
-			verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='10']")).getText(),
+			verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='11']")).getText(),
 					The_340BPricewith$, "The_340BPrice");
 		}
 
@@ -1750,7 +1776,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver()
 				.findElement(By.xpath("(//th[@aria-label='WAC Price']//span[contains(text(),'WAC Price')])[1]")));
 		Thread.sleep(3000);
-		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='11']")).getText(),
+		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='12']")).getText(),
 				Formatted_WACPricewith$, "WACPrice");
 		Thread.sleep(3000);
 
@@ -1761,7 +1787,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 				By.xpath("//th[@aria-label='Contract Strength']//span[contains(text(),'Contract Strength')]")));
 		Thread.sleep(3000);
 		verifyExactContent(
-				getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='12']")).getText()
+				getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='13']")).getText()
 						.replaceAll("\\s", "").replaceAll("\\p{P}", ""),
 				contractStrength.replaceAll("\\s", "").replaceAll("\\p{P}", ""), "Contract Strength");
 
@@ -1772,7 +1798,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
 				getDriver().findElement(By.xpath("//th[@aria-label='ASP']//span[contains(text(),'ASP')]")));
 		Thread.sleep(3000);
-		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='13']")).getText(),
+		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='14']")).getText(),
 				ASPwith$, "ASP");
 
 		String ASPStrength = ASP_Drug_Strength_Number + ASP_Drug_Strength_Units;
@@ -1781,7 +1807,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver()
 				.findElement(By.xpath("//th[@aria-label='ASP Strength']//span[contains(text(),'ASP Strength')]")));
 		Thread.sleep(3000);
-		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='14']")).getText(),
+		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='15']")).getText(),
 				ASPStrength, "ASPStrength");
 
 		return this;
@@ -1811,7 +1837,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 	}
 
 	public CalculatorPage verifyBasicTableValuesForSpecificNDCInIvigCalulatorPage(String TradeName, String NDC,
-			String Form, String AdjustedPackageSize, String PackageQuantity, String GenericName, String ContractPrice,
+			String Form, String AdjustedPackageSize, String PackageQuantity, String GenericName, String CreatedOn, String ContractPrice,
 			String ContractPriceType, String The_340BPrice, String WACPrice, String Drug_Strength_Number,
 			String Drug_Strength_Units, String Drug_Strength_Volume, String Drug_Form_Code, String Units, String ASP,
 			String ASP_Drug_Strength_Number, String ASP_Drug_Strength_Units) throws InterruptedException {
@@ -1836,19 +1862,22 @@ public class CalculatorPage extends WebDriverServiceImpl {
 		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='5']")).getText(),
 				GenericName, "GenericName");
 
+		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='6']")).getAttribute("textContent"),
+				CreatedOn, "Last Updated Time");
+		
 		Thread.sleep(3000);
 		String formatted_ContractPriceWithComma = df.format(new BigDecimal(ContractPrice));
 		String ContractPricewith$ = "$" + formatted_ContractPriceWithComma;
 		System.out.println("ContractPricewith$: " + ContractPricewith$);
-		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='6']")).getText(),
+		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='7']")).getText(),
 				ContractPricewith$, "ContractPrice");
 
-		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='7']")).getText(),
+		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='8']")).getText(),
 				ContractPriceType, "ContractPriceType");
 
 		Thread.sleep(3000);
 		if (The_340BPrice.equalsIgnoreCase("0")) {
-			verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='8']")).getText(),
+			verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='9']")).getText(),
 					The_340BPrice, "The_340BPrice");
 
 		} else {
@@ -1856,7 +1885,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 			String The_340BPricewith$ = "$" + The_340BPrice_format;
 			System.out.println("The_340BPricewith$" + The_340BPricewith$);
 
-			verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='8']")).getText(),
+			verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='9']")).getText(),
 					The_340BPricewith$, "The_340BPrice");
 		}
 
@@ -1867,7 +1896,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver()
 				.findElement(By.xpath("(//th[@aria-label='WAC Price']//span[contains(text(),'WAC Price')])[1]")));
 		Thread.sleep(3000);
-		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='9']")).getText(),
+		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='10']")).getText(),
 				Formatted_WACPricewith$, "WACPrice");
 		Thread.sleep(3000);
 
@@ -1879,7 +1908,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 							"//th[@aria-label='Contract Strength']//span[contains(text(),'Contract Strength')]")));
 			Thread.sleep(3000);
 			verifyExactContent(
-					getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='10']")).getText()
+					getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='11']")).getText()
 							.replaceAll("\\s", "").replaceAll("\\p{P}", ""),
 					contractStrength.replaceAll("\\s", "").replaceAll("\\p{P}", ""), "Contract Strength");
 		} else {
@@ -1892,7 +1921,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 							"//th[@aria-label='Contract Strength']//span[contains(text(),'Contract Strength')]")));
 			Thread.sleep(3000);
 			verifyExactContent(
-					getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='10']")).getText()
+					getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='11']")).getText()
 							.replaceAll("\\s", "").replaceAll("\\p{P}", ""),
 					contractStrength.replaceAll("\\s", "").replaceAll("\\p{P}", ""), "Contract Strength");
 		}
@@ -1908,7 +1937,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 				.findElement(By.xpath("//th[@aria-label='Total Units']//span[contains(text(),'Total Units')]")));
 		Thread.sleep(3000);
 		verifyExactContent(
-				getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='11']")).getText()
+				getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='12']")).getText()
 						.replaceAll("\\s", "").replaceAll("\\p{P}", ""),
 				totalUnits.toString().replaceAll("\\s", "").replaceAll("\\p{P}", ""), "Total Units");
 
@@ -1922,7 +1951,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 				.findElement(By.xpath("//th[@aria-label='Total Cost']//span[contains(text(),'Total Cost')]")));
 		Thread.sleep(3000);
 		verifyExactContent(
-				getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='12']")).getText()
+				getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='13']")).getText()
 						.replaceAll("\\s", "").replaceAll("\\p{P}", ""),
 				totalCostwith$.replaceAll("\\s", "").replaceAll("\\p{P}", ""), "Total Cost");
 
@@ -1933,7 +1962,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
 				getDriver().findElement(By.xpath("//th[@aria-label='ASP']//span[contains(text(),'ASP')]")));
 		Thread.sleep(3000);
-		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='13']")).getText(),
+		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='14']")).getText(),
 				ASPwith$, "ASP");
 
 		String ASPStrength = ASP_Drug_Strength_Number + ASP_Drug_Strength_Units;
@@ -1942,7 +1971,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver()
 				.findElement(By.xpath("//th[@aria-label='ASP Strength']//span[contains(text(),'ASP Strength')]")));
 		Thread.sleep(3000);
-		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='14']")).getText(),
+		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='15']")).getText(),
 				ASPStrength, "ASPStrength");
 
 		return this;
@@ -2304,6 +2333,12 @@ public class CalculatorPage extends WebDriverServiceImpl {
 		return this;
 	}
 
+	public CalculatorPage ZoomoutBrowser() {
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		String zoomoutChrome = "document.body.style.zoom='85.0%'";
+		js.executeScript(zoomoutChrome);
+		return this;
+	}
 	public CalculatorPage search_FieldName_InDrugDashboardPage(String filterMenu, String fieldValue)
 			throws InterruptedException {
 	
@@ -2322,7 +2357,10 @@ public class CalculatorPage extends WebDriverServiceImpl {
 		type(getDriver().findElement(By.xpath("(//input[@aria-label='" + filterMenu + " Filter'])[1]")), fieldValue,
 				"Field Value");
 		Thread.sleep(3000);
-		clickwithFieldName(getDriver().findElement(By.xpath("//button[@type='submit']")), "Submit button");
+		//clickwithFieldName(getDriver().findElement(By.xpath("//button[@type='submit']")), "Submit button");
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();",
+				getDriver().findElement(By.xpath("//button[@type='submit']")));
+
 		Thread.sleep(3000);
 		return this;
 	}
@@ -2333,9 +2371,16 @@ public class CalculatorPage extends WebDriverServiceImpl {
 				getDriver().findElement(By.xpath("//h3[contains(text(),'Medicare Part B Reimbursement Rate')]")));
 
 		Thread.sleep(2000);
-		clickwithFieldName(getDriver().findElement(By.xpath("//a[@title='" + filterMenu + " Filter Menu']")), "Filter");
+		//clickwithFieldName(getDriver().findElement(By.xpath("//a[@title='" + filterMenu + " Filter Menu']")), "Filter");
+		
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();",
+				getDriver().findElement(By.xpath("//a[@title='" + filterMenu + " Filter Menu']")));
 		Thread.sleep(3000);
-		clickwithFieldName(getDriver().findElement(By.xpath("//button[@type='reset']")), "Reset button");
+		//clickwithFieldName(getDriver().findElement(By.xpath("//button[@type='reset']")), "Reset button");
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();",
+				getDriver().findElement(By.xpath("//button[@type='reset']")));
+
+		
 		Thread.sleep(3000);
 		return this;
 	}
@@ -2376,7 +2421,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 	}
 
 	public CalculatorPage verifyTableHeaders_IVIG_CalulatorPage_Non340B(String TradeNameHeader, String NDCHeader,
-			String FormHeader, String AdjustedPackageSizeHeader, String PackageQuantityHeader, String GenericNameHeader,
+			String FormHeader, String AdjustedPackageSizeHeader, String PackageQuantityHeader, String GenericNameHeader, String LastUpdatedTimeHeader,
 			String ContractPriceHeader, String ContractPriceTypeHeader, String The_340BPriceHeader,
 			String WACPriceHeader, String ContractStrengthHeader, String TotalUnitsHeader, String TotalCostHeader,
 			String ASPHeader, String ASPStrengthHeader, String ContractUnitsHeader, String ReimbursementHeader,
@@ -2391,7 +2436,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 				FormHeader);
 		verifyDisplayed(
 				getDriver().findElement(
-						By.xpath("//*[@aria-label='Drug_Package_Size']//*[contains(text(),'Package Size')]")),
+						By.xpath("//*[@aria-label='Drug_Package_Size']//*[contains(text(),' Dose Per Vial ')]")),
 				AdjustedPackageSizeHeader);
 		verifyDisplayed(
 				getDriver().findElement(
@@ -2402,6 +2447,14 @@ public class CalculatorPage extends WebDriverServiceImpl {
 						By.xpath("//th[@aria-label='Generic Name']//span[contains(text(),'Generic Name')]")),
 				GenericNameHeader);
 
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver().findElement(
+				By.xpath("//th[@aria-label='Last Updated Time']//span[contains(text(),'Last Updated Time')]")));
+		Thread.sleep(3000);
+		verifyDisplayed(
+				getDriver().findElement(
+						By.xpath("//th[@aria-label='Last Updated Time']//span[contains(text(),'Last Updated Time')]")),
+				LastUpdatedTimeHeader);
+		
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver().findElement(
 				By.xpath("(//th[@aria-label='Contract Price']//span[contains(text(),'Contract Price')])[1]")));
 		Thread.sleep(3000);
@@ -2500,18 +2553,18 @@ public class CalculatorPage extends WebDriverServiceImpl {
 
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
 				getDriver().findElement(By.xpath(
-						"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential']//span[contains(text(),'Differential')]")));
+						"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential']//span[contains(text(),'Revenue ')]")));
 		Thread.sleep(3000);
 		verifyDisplayed(getDriver().findElement(By.xpath(
-				"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential']//span[contains(text(),'Differential')]")),
+				"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential']//span[contains(text(),'Revenue ')]")),
 				DifferentialHeader);
 
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
 				getDriver().findElement(By.xpath(
-						"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential_Per_Quantity']//span[contains(text(),'Differential Per Units')]")));
+						"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential_Per_Quantity']//span[contains(@title,'Differential Contract Unit Per Units formula')]")));
 		Thread.sleep(3000);
 		verifyDisplayed(getDriver().findElement(By.xpath(
-				"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential_Per_Quantity']//span[contains(text(),'Differential Per Units')]")),
+				"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential_Per_Quantity']//span[contains(@title,'Differential Contract Unit Per Units formula')]")),
 				DifferentialPerUnitsHeader);
 
 		return this;
@@ -2519,10 +2572,11 @@ public class CalculatorPage extends WebDriverServiceImpl {
 
 	public CalculatorPage verifyTableHeaders_IVIG_CalulatorPage_340B(String TradeNameHeader, String NDCHeader,
 			String FormHeader, String AdjustedPackageSizeHeader, String PackageQuantityHeader, String GenericNameHeader,
-			String ContractPriceHeader, String ContractPriceTypeHeader, String The_340BPriceHeader,
-			String WACPriceHeader, String ContractStrengthHeader, String TotalUnitsHeader, String TotalCostHeader,
-			String ASPHeader, String ASPStrengthHeader, String ContractUnitsHeader, String ReimbursementHeader,
-			String DifferentialHeader, String DifferentialPerUnitsHeader) throws InterruptedException {
+			String LastUpdatedTimeHeader, String ContractPriceHeader, String ContractPriceTypeHeader,
+			String The_340BPriceHeader, String WACPriceHeader, String ContractStrengthHeader, String TotalUnitsHeader,
+			String TotalCostHeader, String ASPHeader, String ASPStrengthHeader, String ContractUnitsHeader,
+			String ReimbursementHeader, String DifferentialHeader, String DifferentialPerUnitsHeader)
+			throws InterruptedException {
 		Thread.sleep(5000);
 		verifyDisplayed(
 				getDriver()
@@ -2531,9 +2585,10 @@ public class CalculatorPage extends WebDriverServiceImpl {
 		verifyDisplayed(getDriver().findElement(By.xpath("//span[contains(text(),'NDC')]")), NDCHeader);
 		verifyDisplayed(getDriver().findElement(By.xpath("//th[@aria-label='Form']//span[contains(text(),'Form')]")),
 				FormHeader);
+		
 		verifyDisplayed(
 				getDriver().findElement(
-						By.xpath("//*[@aria-label='Drug_Package_Size']//*[contains(text(),'Package Size')]")),
+						By.xpath("//*[@aria-label='Drug_Package_Size']//*[contains(text(),' Dose Per Vial ')]")),
 				AdjustedPackageSizeHeader);
 		verifyDisplayed(
 				getDriver().findElement(
@@ -2544,6 +2599,14 @@ public class CalculatorPage extends WebDriverServiceImpl {
 						By.xpath("//th[@aria-label='Generic Name']//span[contains(text(),'Generic Name')]")),
 				GenericNameHeader);
 
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver().findElement(
+				By.xpath("//th[@aria-label='Last Updated Time']//span[contains(text(),'Last Updated Time')]")));
+		Thread.sleep(3000);
+		verifyDisplayed(
+				getDriver().findElement(
+						By.xpath("//th[@aria-label='Last Updated Time']//span[contains(text(),'Last Updated Time')]")),
+				LastUpdatedTimeHeader);
+		
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver().findElement(
 				By.xpath("(//th[@aria-label='Contract Price']//span[contains(text(),'Contract Price')])[1]")));
 		Thread.sleep(3000);
@@ -2622,16 +2685,15 @@ public class CalculatorPage extends WebDriverServiceImpl {
 				getDriver().findElement(
 						By.xpath("//th[@aria-label='Contract Units']//span[contains(text(),'Contract Units')]")),
 				ContractUnitsHeader);
-
 		// 340B Price
-		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver().findElement(
-				By.xpath("//th[@aria-label='Contract Price']//span[contains(text(),'340B Price')]")));
-		Thread.sleep(3000);
-		verifyDisplayed(
-				getDriver().findElement(
-						By.xpath("//th[@aria-label='Contract Price']//span[contains(text(),'340B Price')]")),
-				The_340BPriceHeader);
-
+				((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver().findElement(
+						By.xpath("//th[@aria-label='Contract Price']//span[contains(text(),'340B Price')]")));
+				Thread.sleep(3000);
+				verifyDisplayed(
+						getDriver().findElement(
+								By.xpath("//th[@aria-label='Contract Price']//span[contains(text(),'340B Price')]")),
+						The_340BPriceHeader);
+				
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
 				getDriver().findElement(By.xpath(
 						"//th[@aria-label='MCP_ContractUnit_ContractPrice_Reimbursement']//span[contains(text(),'Reimbursement')]")));
@@ -2642,25 +2704,25 @@ public class CalculatorPage extends WebDriverServiceImpl {
 
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
 				getDriver().findElement(By.xpath(
-						"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential']//span[contains(text(),'Differential')]")));
+						"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential']//span[contains(text(),'Revenue ')]")));
 		Thread.sleep(3000);
 		verifyDisplayed(getDriver().findElement(By.xpath(
-				"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential']//span[contains(text(),'Differential')]")),
+				"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential']//span[contains(text(),'Revenue ')]")),
 				DifferentialHeader);
 
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
 				getDriver().findElement(By.xpath(
-						"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential_Per_Quantity']//span[contains(text(),'Differential Per Units')]")));
+						"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential_Per_Quantity']//span[contains(@title,'Differential Contract Unit Per Units formula')]")));
 		Thread.sleep(3000);
 		verifyDisplayed(getDriver().findElement(By.xpath(
-				"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential_Per_Quantity']//span[contains(text(),'Differential Per Units')]")),
+				"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential_Per_Quantity']//span[contains(@title,'Differential Contract Unit Per Units formula')]")),
 				DifferentialPerUnitsHeader);
 
 		return this;
 	}
 	
 	public CalculatorPage verifyTableValuesForSpecificNDCInIVIGCalulatorPage(String TradeName, String NDC, String Form,
-			String PackageSize, String PackageQuantity, String GenericName, String ContractPrice,
+			String PackageSize, String PackageQuantity, String GenericName, String CreatedOn, String ContractPrice,
 			String ContractPriceType, String The_340BPrice, String WACPrice, String Drug_Strength_Number,
 			String Drug_Strength_Units, String Drug_Strength_Volume, String Drug_Form_Code, String Units, String ASP,
 			String ASP_Drug_Strength_Number, String ASP_Drug_Strength_Units, String Reimbursement,
@@ -2686,14 +2748,20 @@ public class CalculatorPage extends WebDriverServiceImpl {
 		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='5']")).getText(),
 				GenericName, "GenericName");
 
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver()
+				.findElement(By.xpath("//th[@aria-label='Last Updated Time']//span[contains(text(),'Last Updated Time')]")));
+		Thread.sleep(3000);
+		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='6']"))
+				.getAttribute("textContent"), CreatedOn, "Last Updated Time");
+
 		Thread.sleep(3000);
 		String formatted_ContractPriceWithComma = df.format(new BigDecimal(ContractPrice));
 		String ContractPricewith$ = "$" + formatted_ContractPriceWithComma;
 		System.out.println("ContractPricewith$: " + ContractPricewith$);
-		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='6']")).getText(),
+		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='7']")).getText(),
 				ContractPricewith$, "ContractPrice");
 
-		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='7']")).getText(),
+		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='8']")).getText(),
 				ContractPriceType, "ContractPriceType");
 
 		Thread.sleep(3000);
@@ -2701,7 +2769,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 		// System.out.println(" The_340BPrice_format: " + The_340BPrice_format);
 		String The_340BPricewith$ = "$" + The_340BPrice_format;
 		System.out.println("The_340BPricewith$" + The_340BPricewith$);
-		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='8']")).getText(),
+		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='9']")).getText(),
 				The_340BPricewith$, "The_340BPrice");
 
 		Thread.sleep(3000);
@@ -2711,7 +2779,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver()
 				.findElement(By.xpath("(//th[@aria-label='WAC Price']//span[contains(text(),'WAC Price')])[1]")));
 		Thread.sleep(3000);
-		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='9']")).getText(),
+		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='10']")).getText(),
 				Formatted_WACPricewith$, "WACPrice");
 		Thread.sleep(3000);
 
@@ -2722,7 +2790,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 				By.xpath("//th[@aria-label='Contract Strength']//span[contains(text(),'Contract Strength')]")));
 		Thread.sleep(3000);
 		verifyExactContent(
-				getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='10']")).getText()
+				getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='11']")).getText()
 						.replaceAll("\\s", "").replaceAll("\\p{P}", ""),
 				contractStrength.replaceAll("\\s", "").replaceAll("\\p{P}", ""), "Contract Strength");
 
@@ -2740,7 +2808,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 				.findElement(By.xpath("//th[@aria-label='Total Units']//span[contains(text(),'Total Units')]")));
 		Thread.sleep(3000);
 		verifyExactContent(
-				getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='11']")).getText()
+				getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='12']")).getText()
 						.replaceAll("\\s", "").replaceAll("\\p{P}", ""),
 				totalUnits.toString().replaceAll("\\s", "").replaceAll("\\p{P}", ""), "Total Units");
 
@@ -2754,7 +2822,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 				.findElement(By.xpath("//th[@aria-label='Total Cost']//span[contains(text(),'Total Cost')]")));
 		Thread.sleep(3000);
 		verifyExactContent(
-				getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='12']")).getText()
+				getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='13']")).getText()
 						.replaceAll("\\s", "").replaceAll("\\p{P}", ""),
 				totalCostwith$.replaceAll("\\s", "").replaceAll("\\p{P}", ""), "Total Cost");
 
@@ -2765,7 +2833,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
 				getDriver().findElement(By.xpath("//th[@aria-label='ASP']//span[contains(text(),'ASP')]")));
 		Thread.sleep(3000);
-		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='13']")).getText(),
+		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='14']")).getText(),
 				ASPwith$, "ASP");
 
 		String ASPStrength = ASP_Drug_Strength_Number + ASP_Drug_Strength_Units;
@@ -2774,7 +2842,7 @@ public class CalculatorPage extends WebDriverServiceImpl {
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver()
 				.findElement(By.xpath("//th[@aria-label='ASP Strength']//span[contains(text(),'ASP Strength')]")));
 		Thread.sleep(3000);
-		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='14']")).getText(),
+		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='15']")).getText(),
 				ASPStrength, "ASPStrength");
 
 		Thread.sleep(3000);
@@ -2788,9 +2856,9 @@ public class CalculatorPage extends WebDriverServiceImpl {
 				getDriver().findElement(By.xpath(
 						"//th[@aria-label='MCP_ContractUnit_ContractPrice_Reimbursement']//span[contains(text(),'Reimbursement')]")));
 		Thread.sleep(3000);
-		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='15']")).getText(),
-				Reimbursement_Pricewith$, "Reimbursement - 340B/Contract Price");
-		System.out.println("Reimbursement_Pricewith$ UI" + getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='15']")).getText());
+		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='16']")).getText(),
+				Reimbursement_Pricewith$, "Reimbursement 2% Sequestration included");
+		System.out.println("Reimbursement 2% Sequestration included" + getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='15']")).getText());
 		
 		Thread.sleep(3000);
 		String formatted_Differential_PriceWithComma = df.format(new BigDecimal(Differential));
@@ -2798,11 +2866,11 @@ public class CalculatorPage extends WebDriverServiceImpl {
 		System.out.println("Differential_Pricewith$" + Differential_Pricewith$);
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
 				getDriver().findElement(By.xpath(
-						"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential']//span[contains(text(),'Differential')]")));
+						"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential']//span[contains(text(),'Revenue ')]")));
 		Thread.sleep(3000);
-		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='16']")).getText(),
-				Differential_Pricewith$, "Differential - 340B/Contract Price");
-		System.out.println("Differential_Pricewith$ UI" + getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='16']")).getText());
+		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='17']")).getText(),
+				Differential_Pricewith$, "Revenue or Loss (+/-)");
+		System.out.println("Revenue or Loss (+/-)" + getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='16']")).getText());
 		
 		Thread.sleep(3000);
 		String formatted_DifferentialPerUnits_PriceWithComma = df
@@ -2811,11 +2879,12 @@ public class CalculatorPage extends WebDriverServiceImpl {
 		System.out.println("DifferentialPerUnits_Pricewith$" + DifferentialPerUnits_Pricewith$);
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
 				getDriver().findElement(By.xpath(
-						"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential_Per_Quantity']//span[contains(text(),'Differential Per Units')]")));
+						"//th[@aria-label='MCP_ContractUnit_ContractPrice_Differential_Per_Quantity']//span[contains(@title,'Differential Contract Unit Per Units formula')]")));
 		Thread.sleep(3000);
-		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='17']")).getText(),
-				DifferentialPerUnits_Pricewith$, "DifferentialPerUnitsHeader - 340B/Contract Price");
-		System.out.println("DifferentialPerUnits_Pricewith$ UI" + getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='17']")).getText());
+		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='18']")).getText(),
+				DifferentialPerUnits_Pricewith$, "Revenue or Loss (+/-) Per Units");
+		System.out.println("Revenue or Loss (+/-) Per Units" + getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='17']")).getText());
+		
 		return this;
 	}
 	

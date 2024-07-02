@@ -41,7 +41,7 @@ public class TestCase_04 {
 						DataInputProvider.getCellData_ColName(iRowNumber, "StrengthHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "colNumForStrength", sDataSheetName))
 
-				// 3. Adjusted Package Size
+				// 3. Adjusted Package Size/Dose per vial
 				.clickColumnHeaderForLockedColumnsInTable2(
 						DataInputProvider.getCellData_ColName(iRowNumber, "AdjustedPackageSizeHeader", sDataSheetName))
 				.verifySortingForAllColumninTable2(

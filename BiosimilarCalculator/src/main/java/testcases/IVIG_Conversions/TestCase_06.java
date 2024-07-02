@@ -42,7 +42,11 @@ public class TestCase_06 {
 				DataInputProvider.getCellData_ColName(iRowNumber, "BiosimilarUseFacility340BPriceAdjustment",
 						sDataSheetName),
 				DataInputProvider.getCellData_ColName(iRowNumber, "SequestrationReduction", sDataSheetName),
-				DataInputProvider.getCellData_ColName(iRowNumber, "HCPCScode", sDataSheetName));
+				DataInputProvider.getCellData_ColName(iRowNumber, "HCPCScode", sDataSheetName))
+
+				.select_NDCfromFilterMenu(DataInputProvider.getCellData_ColName(iRowNumber, "NDC", sDataSheetName))
+				.update_CreatedOnToExcel(
+						DataInputProvider.getCellData_ColName(iRowNumber, "SheetName", sDataSheetName));
 
 		new GeneralDashboardPage().clickCalculatorMenu().clickIVIGCalculatorMenu();
 		new CalculatorPage()
@@ -59,6 +63,7 @@ public class TestCase_06 {
 						DataInputProvider.getCellData_ColName(iRowNumber, "PackageSizeHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "PackageQuantityHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "GenericNameHeader", sDataSheetName),
+						DataInputProvider.getCellData_ColName(iRowNumber, "LastUpdatedTimeHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "ContractPriceHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "ContractPriceTypeHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "The_340BPriceHeader", sDataSheetName),
@@ -127,6 +132,7 @@ public class TestCase_06 {
 						DataInputProvider.getCellData_ColName(iRowNumber, "Adjusted_PackageSize", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "Drug_Package_Quantity", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "GenericName", sDataSheetName),
+						DataInputProvider.getCellData_ColName(iRowNumber, "CreatedOn", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "ContractPrice", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "ContractPriceType", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "The_340BPrice", sDataSheetName),

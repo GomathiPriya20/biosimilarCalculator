@@ -17,7 +17,7 @@ public class TestCase_01 {
 		new LoginPage().loginToApplication(DataInputProvider.getCellData_ColName(iRowNumber, "EmailId", sDataSheetName),
 				DataInputProvider.getCellData_ColName(iRowNumber, "Password", sDataSheetName));
 
-		/*		new GeneralDashboardPage().clickDrugsDashboardMenu()
+		new GeneralDashboardPage().clickDrugsDashboardMenu()
 
 				.addDrugForCalculation_Biosimilar_DrugsDashboardPage(
 						DataInputProvider.getCellData_ColName(iRowNumber, "NDC", sDataSheetName),
@@ -50,8 +50,11 @@ public class TestCase_01 {
 						DataInputProvider.getCellData_ColName(iRowNumber, "SequestrationReduction", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "HCPCScode", sDataSheetName))
 
-		;
-	*/	new GeneralDashboardPage().clickCalculatorMenu().clickBiosimilarCalculatorMenu();
+				.select_NDCfromFilterMenu(DataInputProvider.getCellData_ColName(iRowNumber, "NDC", sDataSheetName))
+				.update_CreatedOnToExcel(
+						DataInputProvider.getCellData_ColName(iRowNumber, "SheetName", sDataSheetName));
+
+		new GeneralDashboardPage().clickCalculatorMenu().clickBiosimilarCalculatorMenu();
 		new CalculatorPage()
 				.selectAdrug_CalculatorPage(
 						DataInputProvider.getCellData_ColName(iRowNumber, "TradeName", sDataSheetName))
@@ -60,7 +63,7 @@ public class TestCase_01 {
 
 				.select_NDCfromFilterMenu(DataInputProvider.getCellData_ColName(iRowNumber, "NDC", sDataSheetName))
 
-/*				.verifyTableHeadersInCalulatorPage_340B(
+				.verifyTableHeadersInCalulatorPage_340B(
 						DataInputProvider.getCellData_ColName(iRowNumber, "TradeNameHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "NDCHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "FormHeader", sDataSheetName),
@@ -69,6 +72,7 @@ public class TestCase_01 {
 						DataInputProvider.getCellData_ColName(iRowNumber, "GenericNameHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "BiosimilarGroupHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "IsOriginatorHeader", sDataSheetName),
+						DataInputProvider.getCellData_ColName(iRowNumber, "LastUpdatedTimeHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "ContractPriceHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "ContractPriceTypeHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "The_340BPriceHeader", sDataSheetName),
@@ -80,7 +84,7 @@ public class TestCase_01 {
 						DataInputProvider.getCellData_ColName(iRowNumber, "ReimbursementHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "DifferentialHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "DifferentialPerUnitsHeader", sDataSheetName))
-*/
+
 				.calculate340BFacilityPricetoBillingUnits_Customize(
 						DataInputProvider.getCellData_ColName(iRowNumber, "ASP_Drug_Strength_Number", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "The_340BPrice", sDataSheetName),
@@ -159,6 +163,7 @@ public class TestCase_01 {
 						DataInputProvider.getCellData_ColName(iRowNumber, "GenericName", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "GroupName", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "IsOriginator", sDataSheetName),
+						DataInputProvider.getCellData_ColName(iRowNumber, "CreatedOn", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "ContractPrice", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "ContractPriceType", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "The_340BPrice", sDataSheetName),

@@ -47,7 +47,7 @@ public class TestCase_06 {
 						DataInputProvider.getCellData_ColName(iRowNumber, "FormHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "colNumForForm", sDataSheetName))
 
-				// 4. Package Size
+				// 4. Package Size/Dose Per Vial
 				.clickColumnHeaderForLockedColumns(
 						DataInputProvider.getCellData_ColName(iRowNumber, "PackageSizeHeader", sDataSheetName))
 				.verifySortingForLockedColumn(
@@ -83,6 +83,14 @@ public class TestCase_06 {
 				.verifySortingAlongWithNullValueCheckforOtherColumns(
 						DataInputProvider.getCellData_ColName(iRowNumber, "IsOriginatorHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "colNumForIsOriginator", sDataSheetName))
+				
+				//New column - Last Updated Time
+				.clickColumnHeaderForScrollableArea(
+						DataInputProvider.getCellData_ColName(iRowNumber, "LastUpdatedTimeHeader", sDataSheetName),
+						DataInputProvider.getCellData_ColName(iRowNumber, "colNumForLastUpdatedTime", sDataSheetName))
+				.verifySortingAlongWithNullValueCheckforOtherColumns(
+						DataInputProvider.getCellData_ColName(iRowNumber, "LastUpdatedTimeHeader", sDataSheetName),
+						DataInputProvider.getCellData_ColName(iRowNumber, "colNumForLastUpdatedTime", sDataSheetName))
 
 				// 9. Contract Price
 				.clickColumnHeaderForScrollableArea(
@@ -140,7 +148,7 @@ public class TestCase_06 {
 						DataInputProvider.getCellData_ColName(iRowNumber, "ASPStrengthHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "colNumForASPStrength", sDataSheetName))
 
-				// 16. Reimbursement
+				// 16. Reimbursement/Reimbursement 2% Sequestration included
 				.clickColumnHeaderForScrollableArea2(
 						DataInputProvider.getCellData_ColName(iRowNumber, "ReimbursementHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "colNumForReimbursementForSorting",
@@ -149,7 +157,7 @@ public class TestCase_06 {
 						DataInputProvider.getCellData_ColName(iRowNumber, "ReimbursementHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "colNumForReimbursement", sDataSheetName))
 
-				// 17. Differential
+				// 17. Differential/Revenue or Loss (+/-)
 				.clickColumnHeaderForScrollableArea2(
 						DataInputProvider.getCellData_ColName(iRowNumber, "DifferentialHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "colNumForDifferentialForSorting",
@@ -158,7 +166,7 @@ public class TestCase_06 {
 						DataInputProvider.getCellData_ColName(iRowNumber, "DifferentialHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "colNumForDifferential", sDataSheetName))
 
-				// 18. Differential Per Units
+				// 18. Differential Per Units/Revenue or Loss (+/-) Per Units
 				.clickColumnHeaderForScrollableArea2(
 						DataInputProvider.getCellData_ColName(iRowNumber, "DifferentialPerUnitsHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "colNumForDifferentialPerUnitsForSorting",
@@ -168,7 +176,7 @@ public class TestCase_06 {
 						DataInputProvider.getCellData_ColName(iRowNumber, "colNumForDifferentialPerUnits",
 								sDataSheetName))
 
-				// 19. Reimbursement
+				// 19. Reimbursement/Reimbursement 2% Sequestration included
 				.clickColumnHeaderForScrollableArea2(
 						DataInputProvider.getCellData_ColName(iRowNumber, "ReimbursementHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "colNumForReimbursement2ForSorting",
@@ -177,7 +185,7 @@ public class TestCase_06 {
 						DataInputProvider.getCellData_ColName(iRowNumber, "ReimbursementHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "colNumForReimbursement2", sDataSheetName))
 
-				// 20. Differential
+				// 20. Differential/Revenue or Loss (+/-)
 				.clickColumnHeaderForScrollableArea2(
 						DataInputProvider.getCellData_ColName(iRowNumber, "DifferentialHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "colNumForDifferential2ForSorting",
@@ -186,7 +194,7 @@ public class TestCase_06 {
 						DataInputProvider.getCellData_ColName(iRowNumber, "DifferentialHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "colNumForDifferential2", sDataSheetName))
 
-				// 21. Differential Per Units
+				// 21. Differential Per Units/Revenue or Loss (+/-) Per Units
 				.clickColumnHeaderForScrollableArea2(
 						DataInputProvider.getCellData_ColName(iRowNumber, "DifferentialPerUnitsHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "colNumForDifferentialPerUnits2ForSorting",

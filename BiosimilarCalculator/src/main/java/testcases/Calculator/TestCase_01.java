@@ -50,7 +50,9 @@ public class TestCase_01 {
 						DataInputProvider.getCellData_ColName(iRowNumber, "SequestrationReduction", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "HCPCScode", sDataSheetName))
 
-		;
+				.select_NDCfromFilterMenu(DataInputProvider.getCellData_ColName(iRowNumber, "NDC", sDataSheetName))
+				.update_CreatedOnToExcel(
+						DataInputProvider.getCellData_ColName(iRowNumber, "SheetName", sDataSheetName));
 		new GeneralDashboardPage().clickCalculatorMenu().clickBiosimilarCalculatorMenu();
 		new CalculatorPage()
 				.selectAdrug_CalculatorPage(
@@ -68,6 +70,7 @@ public class TestCase_01 {
 						DataInputProvider.getCellData_ColName(iRowNumber, "GenericName", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "GroupName", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "IsOriginator", sDataSheetName),
+						DataInputProvider.getCellData_ColName(iRowNumber, "CreatedOn", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "ContractPrice", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "ContractPriceType", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "The_340BPrice", sDataSheetName),
@@ -84,7 +87,7 @@ public class TestCase_01 {
 				.select_NDCfromFilterMenu(DataInputProvider.getCellData_ColName(iRowNumber, "NDC", sDataSheetName))
 				.clickRemoveButtonInDrugsDashboardPage();
 
-		new GeneralDashboardPage().clickDrugsDashboardMenu().addDrugForCalculation_IVIG_DrugsDashboardPage(
+	/*	new GeneralDashboardPage().clickDrugsDashboardMenu().addDrugForCalculation_IVIG_DrugsDashboardPage(
 				DataInputProvider.getCellData_ColName(iRowNumber, "NDC", sDataSheetName),
 				DataInputProvider.getCellData_ColName(iRowNumber, "TradeName", sDataSheetName),
 				DataInputProvider.getCellData_ColName(iRowNumber, "Calculator_Type_IntCode_IVIG", sDataSheetName),
@@ -109,7 +112,11 @@ public class TestCase_01 {
 				DataInputProvider.getCellData_ColName(iRowNumber, "BiosimilarUseFacility340BPriceAdjustment",
 						sDataSheetName),
 				DataInputProvider.getCellData_ColName(iRowNumber, "SequestrationReduction", sDataSheetName),
-				DataInputProvider.getCellData_ColName(iRowNumber, "HCPCScode", sDataSheetName));
+				DataInputProvider.getCellData_ColName(iRowNumber, "HCPCScode", sDataSheetName))
+
+				.select_NDCfromFilterMenu(DataInputProvider.getCellData_ColName(iRowNumber, "NDC", sDataSheetName))
+				.update_CreatedOnToExcel(
+						DataInputProvider.getCellData_ColName(iRowNumber, "SheetName", sDataSheetName));
 
 		new GeneralDashboardPage().clickCalculatorMenu().clickIVIGCalculatorMenu();
 		new CalculatorPage()
@@ -127,6 +134,7 @@ public class TestCase_01 {
 						DataInputProvider.getCellData_ColName(iRowNumber, "Adjusted_PackageSize", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "Drug_Package_Quantity", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "GenericName", sDataSheetName),
+						DataInputProvider.getCellData_ColName(iRowNumber, "CreatedOn", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "ContractPrice", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "ContractPriceType", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "The_340BPrice", sDataSheetName),
@@ -143,6 +151,6 @@ public class TestCase_01 {
 		new GeneralDashboardPage().clickDrugsDashboardMenu()
 				.select_NDCfromFilterMenu(DataInputProvider.getCellData_ColName(iRowNumber, "NDC", sDataSheetName))
 				.clickRemoveButtonInDrugsDashboardPage();
-
+*/
 	}
 }

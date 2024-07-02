@@ -26,7 +26,7 @@ public class TestCase_05 {
 				.type_Units_CalulatorPage(DataInputProvider.getCellData_ColName(iRowNumber, "Units", sDataSheetName))
 
 				// 1. Trade Name
-	/*			.search_FieldName_InDrugDashboardPage(
+				.search_FieldName_InDrugDashboardPage(
 						DataInputProvider.getCellData_ColName(iRowNumber, "TradeNameHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "TradeName_Ivig", sDataSheetName))
 				.verifyColwiseFilterResults(
@@ -57,13 +57,14 @@ public class TestCase_05 {
 
 				// 4. Package Size/Dose Per Vial
 				.search_FieldName_InDrugDashboardPage(
-						DataInputProvider.getCellData_ColName(iRowNumber, "PackageQuantityHeader_Type2", sDataSheetName),
+						DataInputProvider.getCellData_ColName(iRowNumber, "PackageQuantityHeader_Type2",
+								sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "Adjusted_PackageSize_Ivig", sDataSheetName))
 				.verifyColwiseFilterResults(
 						DataInputProvider.getCellData_ColName(iRowNumber, "colNumForPackageSize", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "Adjusted_PackageSize_Ivig", sDataSheetName))
-				.clearFilterResults(
-						DataInputProvider.getCellData_ColName(iRowNumber, "PackageQuantityHeader_Type2", sDataSheetName))
+				.clearFilterResults(DataInputProvider.getCellData_ColName(iRowNumber, "PackageQuantityHeader_Type2",
+						sDataSheetName))
 
 				// 5. Package Quantity
 				.search_FieldName_InDrugDashboardPage(
@@ -74,8 +75,9 @@ public class TestCase_05 {
 						DataInputProvider.getCellData_ColName(iRowNumber, "Drug_Package_Quantity_Ivig", sDataSheetName))
 				.clearFilterResults(
 						DataInputProvider.getCellData_ColName(iRowNumber, "PackageQuantityHeader", sDataSheetName))
-*/
+
 				// 6. Generic Name
+				.ZoomoutBrowser()
 				.search_FieldName_InDrugDashboardPage(
 						DataInputProvider.getCellData_ColName(iRowNumber, "GenericNameHeader", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "GenericName_Ivig", sDataSheetName))

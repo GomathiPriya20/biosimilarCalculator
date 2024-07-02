@@ -55,7 +55,7 @@ public class TestCase_07 {
 								sDataSheetName))
 				.clearFilterResults(DataInputProvider.getCellData_ColName(iRowNumber, "FormHeader", sDataSheetName))
 
-				// 4. Package Size
+				// 4. Package Size/Dose Per Vial
 				.search_FieldName_InDrugDashboardPage(
 						DataInputProvider.getCellData_ColName(iRowNumber, "PackageQuantityHeader_Type2",
 								sDataSheetName),

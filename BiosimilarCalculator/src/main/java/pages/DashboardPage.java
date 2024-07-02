@@ -12,6 +12,7 @@ import org.testng.Assert;
 import com.aventstack.extentreports.Status;
 import driver.Driver;
 import services.WebDriverServiceImpl;
+import utils.DataInputProvider;
 
 public class DashboardPage extends WebDriverServiceImpl {
 
@@ -106,6 +107,48 @@ public class DashboardPage extends WebDriverServiceImpl {
 		Thread.sleep(3000);
 		verifyExactContent(getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='1']")).getText(), NDC,
 				"NDC");
+		return this;
+	}
+	
+	public DashboardPage update_CreatedOnToExcel(String SheetName) throws InterruptedException {
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='29']")));
+		Thread.sleep(3000);
+
+		String CreatedOn = getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='29']"))
+				.getAttribute("textContent");
+		System.out.println("CreatedOn"+CreatedOn);
+		// write the value back to excel after calculation
+		try {
+			DataInputProvider.setCellData(CreatedOn, Driver.iTestCaseRowNum, "CreatedOn",
+					Driver.properties.getProperty(SheetName));
+			setReport().log(Status.PASS, "SheetName field  " + CreatedOn + " is updated in the testdata sheet",
+					screenshotCapture());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		Thread.sleep(5000);
+		return this;
+	}
+	
+	public DashboardPage update_UpdatedOnToExcel(String SheetName) throws InterruptedException {
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='31']")));
+		Thread.sleep(3000);
+
+		String UpdatedOn = getDriver().findElement(By.xpath("//td[@data-kendo-grid-column-index='31']"))
+				.getAttribute("textContent");
+		System.out.println("UpdatedOn"+UpdatedOn);
+		// write the value back to excel after calculation
+		try {
+			DataInputProvider.setCellData(UpdatedOn, Driver.iTestCaseRowNum, "UpdatedOn",
+					Driver.properties.getProperty(SheetName));
+			setReport().log(Status.PASS, "SheetName field  " + UpdatedOn + " is updated in the testdata sheet",
+					screenshotCapture());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		Thread.sleep(5000);
 		return this;
 	}
 
