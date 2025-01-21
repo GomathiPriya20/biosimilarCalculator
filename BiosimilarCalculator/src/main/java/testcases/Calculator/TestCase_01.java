@@ -87,7 +87,7 @@ public class TestCase_01 {
 				.select_NDCfromFilterMenu(DataInputProvider.getCellData_ColName(iRowNumber, "NDC", sDataSheetName))
 				.clickRemoveButtonInDrugsDashboardPage();
 
-	/*	new GeneralDashboardPage().clickDrugsDashboardMenu().addDrugForCalculation_IVIG_DrugsDashboardPage(
+		new GeneralDashboardPage().clickDrugsDashboardMenu().addDrugForCalculation_IVIG_DrugsDashboardPage(
 				DataInputProvider.getCellData_ColName(iRowNumber, "NDC", sDataSheetName),
 				DataInputProvider.getCellData_ColName(iRowNumber, "TradeName", sDataSheetName),
 				DataInputProvider.getCellData_ColName(iRowNumber, "Calculator_Type_IntCode_IVIG", sDataSheetName),
@@ -151,6 +151,6 @@ public class TestCase_01 {
 		new GeneralDashboardPage().clickDrugsDashboardMenu()
 				.select_NDCfromFilterMenu(DataInputProvider.getCellData_ColName(iRowNumber, "NDC", sDataSheetName))
 				.clickRemoveButtonInDrugsDashboardPage();
-*/
+
 	}
 }

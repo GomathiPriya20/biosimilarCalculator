@@ -91,6 +91,31 @@ public class DashboardPage extends WebDriverServiceImpl {
 		return this;
 	}
 
+	// Verify UpdatedOn column is present
+		public DashboardPage verifyUpdatedOnColumn() throws InterruptedException {
+			WebElement element = getDriver().findElement(By.xpath("//span[contains(text(),'Updated On')]"));
+			JavascriptExecutor js = (JavascriptExecutor) getDriver();
+			js.executeScript("arguments[0].scrollIntoView(true);", element);
+			verifyDisplayed(getDriver().findElement(By.xpath("//span[contains(text(),'Updated On')]")), "UpdatedOn column");
+			return this;
+		}
+
+		// Verify UpdatedBy column is present
+		public DashboardPage verifyUpdatedByColumn() throws InterruptedException {
+			WebElement element = getDriver().findElement(By.xpath("//span[contains(text(),'Updated By')]"));
+			JavascriptExecutor js = (JavascriptExecutor) getDriver();
+			js.executeScript("arguments[0].scrollIntoView(true);", element);
+			verifyDisplayed(getDriver().findElement(By.xpath("//span[contains(text(),'Updated By')]")), "UpdatedBy column");
+			return this;
+		}
+
+		// Click UpdatedOn column
+		public DashboardPage clickUpdatedOnColumn() throws InterruptedException {
+			Thread.sleep(1000);
+			click((getDriver().findElement(By.xpath("//span[contains(text(),'Updated On')]"))), "UpdatedOn column");
+			return this;
+		}
+		
 	public DashboardPage select_NDCfromFilterMenu(String NDC) throws InterruptedException {
 		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
 				getDriver().findElement(By.xpath("//a[@title='NDC Filter Menu']//kendo-svgicon")));
@@ -800,6 +825,455 @@ public class DashboardPage extends WebDriverServiceImpl {
 		return this;
 	}
 
+	public DashboardPage drugDetail_ErrorMsg_Biosimilar_DrugsDashboardPage(String NDC, String TradeName,
+			String CalculatorType, String CalculatorTypeIntCode, String GroupName, String Supplier, String GenericName,
+			String WACPrice, String Drug_Dosage_Form_Description, String Drug_Strength_Number,
+			String DrugStrengthUnitIntCode, String DrugStrengthVolume, String Drug_Form_Code,
+			String Adjusted_PackageSize, String Drug_Package_Quantity, String ASP, String ASP_Adjustment,
+			String AspDrugStrengthUnitsIntCode, String ASP_Drug_Strength_Number, String Facility340BPriceAdjustment,
+			String SequestrationReduction, String HCPCScode) throws InterruptedException {
+
+		click(getDriver().findElement(By.xpath("//span[contains(text(),'Add new')]")), "Add New Button");
+		Thread.sleep(5000);
+
+		// NDC
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[1]")).click();
+		Thread.sleep(2000);
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[1]")).clear();
+		Thread.sleep(2000);
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[1]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(getDriver().findElement(By.xpath("//div[contains(text(),'Valid NDC number required')]"))
+				.getAttribute("textContent"), NDC, "Error Message on NDC Column");
+
+		// TradeName
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[2]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(getDriver().findElement(By.xpath("//span[contains(text(),'Trade Name is required')]"))
+				.getAttribute("textContent"), TradeName, "Error Message on TradeName Column");
+
+		// Calculator Type
+		// select from dropdown
+		getDriver().findElement(By.xpath("//kendo-dropdownlist[@textfield='CalculatorTypeDesc']/span/span")).click();// click
+		Thread.sleep(2000);
+		getDriver().findElement(By.xpath("//kendo-dropdownlist[@textfield='Name']/span/span")).click();
+		verifyExactContent(getDriver().findElement(By.xpath("//span[contains(text(),'Calculator Type is required')]"))
+				.getAttribute("textContent"), CalculatorType, "Error Message on Calculator Type Column");
+		Thread.sleep(2000);
+		getDriver().findElement(By.xpath("//kendo-dropdownlist[@textfield='CalculatorTypeDesc']/span/span")).click();// click
+
+		int calType = Integer.parseInt(CalculatorTypeIntCode);
+		for (int i = 0; i <= calType; i++) {
+			Actions action1 = new Actions(getDriver());
+			action1.sendKeys(Keys.DOWN).build().perform();// press down arrow key
+		}
+		Thread.sleep(10000);
+
+		// GroupName
+		// select from dropdown
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[4]")).click();
+		verifyExactContent(getDriver().findElement(By.xpath("//span[contains(text(),'Group is required')]"))
+				.getAttribute("textContent"), GroupName, "Error Message on GroupName Column");
+		Thread.sleep(5000);
+
+		// Supplier
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[4]")));
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[4]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(getDriver().findElement(By.xpath("//span[contains(text(),'Supplier is required')]"))
+				.getAttribute("textContent"), Supplier, "Error Message on SupplierName Column");
+		Thread.sleep(3000);
+
+		// GenericName
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[5]")));
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[5]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(getDriver().findElement(By.xpath("//span[contains(text(),'Generic Name is required')]"))
+				.getAttribute("textContent"), GenericName, "Error Message on GenericName Column");
+		Thread.sleep(3000);
+
+		// WACPrice
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[9]")));
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[9]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(getDriver().findElement(By.xpath("//span[contains(text(),'WAC Price is required')]"))
+				.getAttribute("textContent"), WACPrice, "Error Message on WAC Price Column");
+		Thread.sleep(2000);
+
+		// Drug_Dosage_Form_Description
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[10]")));
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[10]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(
+				getDriver().findElement(By.xpath("//span[contains(text(),'Drug Dosage Form is required')]"))
+						.getAttribute("textContent"),
+				Drug_Dosage_Form_Description, "Error Message on Drug Dosage Form Column");
+		Thread.sleep(2000);
+
+		// Drug_Strength_Number
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[11]")));
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[11]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(
+				getDriver().findElement(By.xpath("//span[contains(text(),'Drug Strength Number is required')]"))
+						.getAttribute("textContent"),
+				Drug_Strength_Number, "Error Message on Drug Strength Number Column");
+		Thread.sleep(2000);
+
+		// Drug_Strength_Units
+		// dropdown
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//kendo-dropdownlist[@textfield='Text'])[2]/span/span")));
+		Thread.sleep(3000);
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[12]")).click();
+		verifyExactContent(
+				getDriver().findElement(By.xpath("//span[contains(text(),'Drug Strength Unit is required')]"))
+						.getAttribute("textContent"),
+				DrugStrengthUnitIntCode, "Error Message on Drug Strength Unit is required Column");
+		Thread.sleep(5000);
+
+		// Drug_Strength_Volume
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[12]")));
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[12]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(
+				getDriver().findElement(By.xpath("//span[contains(text(),'Drug Strength Volume is required')]"))
+						.getAttribute("textContent"),
+				DrugStrengthVolume, "Error Message on Drug Strength Volume Column");
+		Thread.sleep(2000);
+
+		// Drug_Form_Code
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[13]")));
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[13]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(getDriver().findElement(By.xpath("//span[contains(text(),'Drug Form Code is required')]"))
+				.getAttribute("textContent"), Drug_Form_Code, "Error Message on Drug Form Code Column");
+		Thread.sleep(2000);
+
+		// Drug_Package_Size/Adjusted PackageSize/Dose Per Vial
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[14]")));
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[14]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(getDriver().findElement(By.xpath("//span[contains(text(),'Dose Per Vial is required')]"))
+				.getAttribute("textContent"), Adjusted_PackageSize, "Error Message on Dose Per Vial Column");
+		Thread.sleep(2000);
+
+		// Drug_Package_Quantity
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[15]")));
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[15]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(
+				getDriver().findElement(By.xpath("//span[contains(text(),'Drug Pack Quantity is required')]"))
+						.getAttribute("textContent"),
+				Drug_Package_Quantity, "Error Message on Drug Pack Quantity Column");
+		Thread.sleep(2000);
+
+		// ASP
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[16]")));
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[16]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(getDriver().findElement(By.xpath("//span[contains(text(),'ASP is required')]"))
+				.getAttribute("textContent"), ASP, "Error Message on ASP Column");
+		Thread.sleep(2000);
+
+		// ASP_Adjustment
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[17]")));
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[17]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(getDriver().findElement(By.xpath("//span[contains(text(),'ASP Adjustment is required')]"))
+				.getAttribute("textContent"), ASP_Adjustment, "Error Message on ASP Adjustment Column");
+		Thread.sleep(2000);
+
+		// ASP_Drug_Strength_Units
+		// dropdown
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//kendo-dropdownlist[@textfield='Text'])[3]/span/span")));
+		Thread.sleep(3000);
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[18]")).click();
+		verifyExactContent(
+				getDriver().findElement(By.xpath("//span[contains(text(),'ASP Drug Strength Unit is required')]"))
+						.getAttribute("textContent"),
+				AspDrugStrengthUnitsIntCode, "Error Message on ASP Drug Strength Unit Column");
+		Thread.sleep(5000);
+
+		// ASP_Drug_Strength_Number
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[18]")));
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[18]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(
+				getDriver().findElement(By.xpath("//span[contains(text(),'ASP Drug Strength Number is required')]"))
+						.getAttribute("textContent"),
+				ASP_Drug_Strength_Number, "Error Message on ASP Drug Strength Number Column");
+		Thread.sleep(2000);
+
+		// Facility340BPriceAdjustment
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[19]")));
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[19]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(
+				getDriver()
+						.findElement(By.xpath("//span[contains(text(),'Facility 340B Price Adjustment is required')]"))
+						.getAttribute("textContent"),
+				Facility340BPriceAdjustment, "Error Message on Facility 340B Price Adjustment Column");
+		Thread.sleep(2000);
+
+		// SequestrationReduction
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[21]")));
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[21]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(
+				getDriver().findElement(By.xpath("//span[contains(text(),'Sequestration Reduction is required')]"))
+						.getAttribute("textContent"),
+				SequestrationReduction, "Error Message on Sequestration Reduction Column");
+		Thread.sleep(2000);
+
+		// HCPCScode
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[22]")));
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[22]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(getDriver().findElement(By.xpath("//span[contains(text(),'HCPCS code is required')]"))
+				.getAttribute("textContent"), HCPCScode, "Error Message on HCPCS code Column");
+		Thread.sleep(2000);
+
+		return this;
+	}
+	
+	public DashboardPage drugDetail_ErrorMsg_IVIG_DrugsDashboardPage(String NDC, String TradeName,
+			String CalculatorType, String CalculatorTypeIntCode, String Supplier, String GenericName,
+			String WACPrice, String Drug_Dosage_Form_Description, String Drug_Strength_Number,
+			String DrugStrengthUnitIntCode, String DrugStrengthVolume, String Drug_Form_Code,
+			String Adjusted_PackageSize, String Drug_Package_Quantity, String ASP, String ASP_Adjustment,
+			String AspDrugStrengthUnitsIntCode, String ASP_Drug_Strength_Number, String Facility340BPriceAdjustment,
+			String SequestrationReduction, String HCPCScode) throws InterruptedException {
+
+		click(getDriver().findElement(By.xpath("//span[contains(text(),'Add new')]")), "Add New Button");
+		Thread.sleep(5000);
+
+		// NDC
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[1]")).click();
+		Thread.sleep(2000);
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[1]")).clear();
+		Thread.sleep(2000);
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[1]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(getDriver().findElement(By.xpath("//div[contains(text(),'Valid NDC number required')]"))
+				.getAttribute("textContent"), NDC, "Error Message on NDC Column");
+
+		// TradeName
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[2]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(getDriver().findElement(By.xpath("//span[contains(text(),'Trade Name is required')]"))
+				.getAttribute("textContent"), TradeName, "Error Message on TradeName Column");
+
+		// Calculator Type
+		// select from dropdown
+		getDriver().findElement(By.xpath("//kendo-dropdownlist[@textfield='CalculatorTypeDesc']/span/span")).click();// click
+		Thread.sleep(2000);
+		getDriver().findElement(By.xpath("//kendo-dropdownlist[@textfield='Name']/span/span")).click();
+		verifyExactContent(getDriver().findElement(By.xpath("//span[contains(text(),'Calculator Type is required')]"))
+				.getAttribute("textContent"), CalculatorType, "Error Message on Calculator Type Column");
+		Thread.sleep(2000);
+		getDriver().findElement(By.xpath("//kendo-dropdownlist[@textfield='CalculatorTypeDesc']/span/span")).click();// click
+
+		int calType = Integer.parseInt(CalculatorTypeIntCode);
+		for (int i = 0; i <= calType; i++) {
+			Actions action1 = new Actions(getDriver());
+			action1.sendKeys(Keys.DOWN).build().perform();// press down arrow key
+		}
+		Thread.sleep(10000);
+
+		// Supplier
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[4]")));
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[4]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(getDriver().findElement(By.xpath("//span[contains(text(),'Supplier is required')]"))
+				.getAttribute("textContent"), Supplier, "Error Message on SupplierName Column");
+		Thread.sleep(3000);
+
+		// GenericName
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[5]")));
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[5]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(getDriver().findElement(By.xpath("//span[contains(text(),'Generic Name is required')]"))
+				.getAttribute("textContent"), GenericName, "Error Message on GenericName Column");
+		Thread.sleep(3000);
+
+		// WACPrice
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[9]")));
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[9]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(getDriver().findElement(By.xpath("//span[contains(text(),'WAC Price is required')]"))
+				.getAttribute("textContent"), WACPrice, "Error Message on WAC Price Column");
+		Thread.sleep(2000);
+
+		// Drug_Dosage_Form_Description
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[10]")));
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[10]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(
+				getDriver().findElement(By.xpath("//span[contains(text(),'Drug Dosage Form is required')]"))
+						.getAttribute("textContent"),
+				Drug_Dosage_Form_Description, "Error Message on Drug Dosage Form Column");
+		Thread.sleep(2000);
+
+		// Drug_Strength_Number
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[11]")));
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[11]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(
+				getDriver().findElement(By.xpath("//span[contains(text(),'Drug Strength Number is required')]"))
+						.getAttribute("textContent"),
+				Drug_Strength_Number, "Error Message on Drug Strength Number Column");
+		Thread.sleep(2000);
+
+		// Drug_Strength_Units
+		// dropdown
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//kendo-dropdownlist[@textfield='Text'])[2]/span/span")));
+		Thread.sleep(3000);
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[12]")).click();
+		verifyExactContent(
+				getDriver().findElement(By.xpath("//span[contains(text(),'Drug Strength Unit is required')]"))
+						.getAttribute("textContent"),
+				DrugStrengthUnitIntCode, "Error Message on Drug Strength Unit is required Column");
+		Thread.sleep(5000);
+
+		// Drug_Strength_Volume
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[12]")));
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[12]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(
+				getDriver().findElement(By.xpath("//span[contains(text(),'Drug Strength Volume is required')]"))
+						.getAttribute("textContent"),
+				DrugStrengthVolume, "Error Message on Drug Strength Volume Column");
+		Thread.sleep(2000);
+
+		// Drug_Form_Code
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[13]")));
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[13]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(getDriver().findElement(By.xpath("//span[contains(text(),'Drug Form Code is required')]"))
+				.getAttribute("textContent"), Drug_Form_Code, "Error Message on Drug Form Code Column");
+		Thread.sleep(2000);
+
+		// Drug_Package_Size/Adjusted PackageSize/Dose Per Vial
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[14]")));
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[14]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(getDriver().findElement(By.xpath("//span[contains(text(),'Dose Per Vial is required')]"))
+				.getAttribute("textContent"), Adjusted_PackageSize, "Error Message on Dose Per Vial Column");
+		Thread.sleep(2000);
+
+		// Drug_Package_Quantity
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[15]")));
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[15]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(
+				getDriver().findElement(By.xpath("//span[contains(text(),'Drug Pack Quantity is required')]"))
+						.getAttribute("textContent"),
+				Drug_Package_Quantity, "Error Message on Drug Pack Quantity Column");
+		Thread.sleep(2000);
+
+		// ASP
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[16]")));
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[16]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(getDriver().findElement(By.xpath("//span[contains(text(),'ASP is required')]"))
+				.getAttribute("textContent"), ASP, "Error Message on ASP Column");
+		Thread.sleep(2000);
+
+		// ASP_Adjustment
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[17]")));
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[17]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(getDriver().findElement(By.xpath("//span[contains(text(),'ASP Adjustment is required')]"))
+				.getAttribute("textContent"), ASP_Adjustment, "Error Message on ASP Adjustment Column");
+		Thread.sleep(2000);
+
+		// ASP_Drug_Strength_Units
+		// dropdown
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//kendo-dropdownlist[@textfield='Text'])[3]/span/span")));
+		Thread.sleep(3000);
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[18]")).click();
+		verifyExactContent(
+				getDriver().findElement(By.xpath("//span[contains(text(),'ASP Drug Strength Unit is required')]"))
+						.getAttribute("textContent"),
+				AspDrugStrengthUnitsIntCode, "Error Message on ASP Drug Strength Unit Column");
+		Thread.sleep(5000);
+
+		// ASP_Drug_Strength_Number
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[18]")));
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[18]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(
+				getDriver().findElement(By.xpath("//span[contains(text(),'ASP Drug Strength Number is required')]"))
+						.getAttribute("textContent"),
+				ASP_Drug_Strength_Number, "Error Message on ASP Drug Strength Number Column");
+		Thread.sleep(2000);
+
+		// Facility340BPriceAdjustment
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[19]")));
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[19]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(
+				getDriver()
+						.findElement(By.xpath("//span[contains(text(),'Facility 340B Price Adjustment is required')]"))
+						.getAttribute("textContent"),
+				Facility340BPriceAdjustment, "Error Message on Facility 340B Price Adjustment Column");
+		Thread.sleep(2000);
+
+		// SequestrationReduction
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[21]")));
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[21]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(
+				getDriver().findElement(By.xpath("//span[contains(text(),'Sequestration Reduction is required')]"))
+						.getAttribute("textContent"),
+				SequestrationReduction, "Error Message on Sequestration Reduction Column");
+		Thread.sleep(2000);
+
+		// HCPCScode
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+				getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[22]")));
+		getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[22]")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		verifyExactContent(getDriver().findElement(By.xpath("//span[contains(text(),'HCPCS code is required')]"))
+				.getAttribute("textContent"), HCPCScode, "Error Message on HCPCS code Column");
+		Thread.sleep(2000);
+
+		return this;
+	}
+	
 	public DashboardPage search_FieldName_InDrugDashboardPage(String filterMenu, String fieldValue)
 			throws InterruptedException {
 		Thread.sleep(3000);
@@ -1481,6 +1955,90 @@ public class DashboardPage extends WebDriverServiceImpl {
 			Thread.sleep(5000);
 
 			setReport().log(Status.PASS, "Updated drug details successfully", screenshotCapture());
+
+			return this;
+		}
+		
+		public DashboardPage removeNonMandatoryFieldsInDrugDetailsPage(
+				String IsOriginator, String ContractPriceTypeIntCode, String BiosimilarUseFacility340BPriceAdjustment,
+				String testUser) throws InterruptedException {
+			
+			click(getDriver().findElement(By.xpath("//span[contains(text(),'Edit')]")), "Edit Button");
+			Thread.sleep(5000);
+
+			// IsOriginator - false - hence don't click
+			if (IsOriginator.equalsIgnoreCase("Yes")) {
+				click(getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[3]")), "Is Originator");
+				Thread.sleep(2000);
+			}
+
+			// ContractNumber
+			((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+					getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[6]")));
+			Thread.sleep(3000);
+			getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[6]")).clear();
+
+			// ContractPrice
+			((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+					getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[7]")));
+			Thread.sleep(3000);
+			getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[7]")).clear();
+
+			// ContractPriceType
+			// select from dropdown
+			getDriver().findElement(By.xpath("(//kendo-dropdownlist[@textfield='Text']/span/span)[1]")).click();// click on
+																												// that
+			int contractPriceType = Integer.parseInt(ContractPriceTypeIntCode);
+			for (int i = 0; i <= contractPriceType; i++) {
+				Actions action1 = new Actions(getDriver());
+				action1.sendKeys(Keys.UP).build().perform();// press down arrow key
+			}
+			Thread.sleep(10000);
+
+			// 340B Price
+			((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);",
+					getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[8]")));
+			Thread.sleep(3000);
+			getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[8]")).clear();
+
+			// BiosimilarUseFacility340BPriceAdjustment - false - hence don't click
+			if (BiosimilarUseFacility340BPriceAdjustment.equalsIgnoreCase("TRUE")) {
+				click(getDriver().findElement(By.xpath("(//td[@kendogridcell]//input)[20]")),
+						"Biosimilar UseFacility 340B PriceAdjustment");
+				Thread.sleep(2000);
+			}
+
+			click(getDriver().findElement(By.xpath("//button[@kendogridsavecommand]/span[contains(text(),'Update')]")),
+					"Update button");
+			Thread.sleep(5000);
+
+			setReport().log(Status.PASS, "Updated drug details successfully", screenshotCapture());
+			Thread.sleep(5000);
+
+			verifyUpdatedOnColumn();
+			clickUpdatedOnColumn();
+			Thread.sleep(2000);
+			clickUpdatedOnColumn();
+
+			verifyUpdatedByColumn();
+
+			// verify value in createdBy column before editing
+			String updatedBy = getDriver().findElement(By.xpath("//*['kendogridtablebody']//tbody/tr[1]/td[30]")).getText();
+			try {
+				if (updatedBy.contains(testUser)) {
+					setReport().log(Status.PASS, "Updated By column contains " + testUser, screenshotCapture());
+
+				} else {
+					setReport().log(Status.FAIL, "Updated By column doesn't contains " + testUser, screenshotCapture());
+					Driver.failCount++;
+				}
+			} catch (WebDriverException e) {
+				setReport().log(Status.FAIL, "Unknown exception occured while verifying Updated By column ",
+						screenshotCapture());
+				Driver.failCount++;
+				throw e;
+			}
+
 
 			return this;
 		}

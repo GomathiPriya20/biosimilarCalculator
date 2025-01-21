@@ -1742,8 +1742,10 @@ public class CalculatorPage extends WebDriverServiceImpl {
 		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='7']")).getText(),
 				IsOriginator, "IsOriginator");
 		
-		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='8']")).getAttribute("textContent"),
-				CreatedOn, "Last Updated Time");
+		System.out.println("createdon from excel" + CreatedOn);
+
+		verifyExactContent(getDriver().findElement(By.xpath("(//td[@data-kendo-grid-column-index='8'])[1]"))
+				.getAttribute("textContent"), CreatedOn, "Last Updated Time");
 
 		Thread.sleep(3000);
 		String formatted_ContractPriceWithComma = df.format(new BigDecimal(ContractPrice));
@@ -1862,8 +1864,8 @@ public class CalculatorPage extends WebDriverServiceImpl {
 		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='5']")).getText(),
 				GenericName, "GenericName");
 
-		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='6']")).getAttribute("textContent"),
-				CreatedOn, "Last Updated Time");
+		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='6']"))
+				.getAttribute("textContent"), CreatedOn, "Last Updated Time");
 		
 		Thread.sleep(3000);
 		String formatted_ContractPriceWithComma = df.format(new BigDecimal(ContractPrice));
@@ -2962,6 +2964,78 @@ public class CalculatorPage extends WebDriverServiceImpl {
 				Driver.failCount++;
 			}
 		}
+		return this;
+	}
+	
+	
+	public CalculatorPage verify_RemoveNonMandatoryFields_ForSpecificNDCInBiosimilarCalulatorPage(String IsOriginator,
+			String ContractPrice, String ContractPriceType, String The_340BPrice) throws InterruptedException {
+
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver().findElement(
+				By.xpath("//th[@aria-label='Biosimilar Group']//span[contains(text(),'Biosimilar Group')]")));
+		Thread.sleep(3000);
+
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver()
+				.findElement(By.xpath("//th[@aria-label='Is Originator']//span[contains(text(),'Is Originator')]")));
+		Thread.sleep(3000);
+		
+		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='7']")).getText(),
+				IsOriginator, "IsOriginator");
+
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver().findElement(
+				By.xpath("(//th[@aria-label='Contract Price']//span[contains(text(),'Contract Price')])[1]")));
+		Thread.sleep(3000);
+		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='9']")).getText(),
+				ContractPrice, "ContractPrice");
+
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver().findElement(
+				By.xpath("//th[@aria-label='Contract Price Type']//span[contains(text(),'Contract Price Type')]")));
+		Thread.sleep(3000);
+		if(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='10']")).getAttribute("textContent").equalsIgnoreCase(""))
+		{
+			setReport().log(Status.PASS, "ContractPriceType value is blank as expected", screenshotCapture());
+			Thread.sleep(5000);	
+		}
+		
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver()
+				.findElement(By.xpath("//th[@aria-label='340B Price']//span[contains(text(),'340B Price')]")));
+
+		Thread.sleep(3000);
+		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='11']")).getText(),
+				The_340BPrice, "The_340BPrice");
+
+		return this;
+	}
+	
+	public CalculatorPage verify_RemoveNonMandatoryFields_ForSpecificNDCInIVIGCalulatorPage(
+			String ContractPrice, String ContractPriceType, String The_340BPrice) throws InterruptedException {
+
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver().findElement(
+				By.xpath("//th[@aria-label='Last Updated Time']//span[contains(text(),'Last Updated Time')]")));
+		Thread.sleep(3000);
+
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver()
+				.findElement(By.xpath("(//th[@aria-label='Contract Price']//span[contains(text(),'Contract Price')])[1]")));
+		Thread.sleep(3000);
+		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='7']")).getText(),
+				ContractPrice, "Contract Price");
+
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver().findElement(
+				By.xpath("//th[@aria-label='Contract Price Type']//span[contains(text(),'Contract Price Type')]")));
+		Thread.sleep(3000);
+		if(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='8']")).getAttribute("textContent").equalsIgnoreCase(""))
+		{
+			setReport().log(Status.PASS, "ContractPriceType value is blank as expected", screenshotCapture());
+			Thread.sleep(5000);	
+		}
+		
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", getDriver()
+				.findElement(By.xpath("//th[@aria-label='340B Price']//span[contains(text(),'340B Price')]")));
+
+		Thread.sleep(3000);
+		verifyExactContent(getDriver().findElement(By.xpath("// td[@data-kendo-grid-column-index='9']")).getText(),
+				The_340BPrice, "The_340BPrice");
+
 		return this;
 	}
 

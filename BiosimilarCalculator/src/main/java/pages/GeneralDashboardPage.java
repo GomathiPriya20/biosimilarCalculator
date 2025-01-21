@@ -96,5 +96,14 @@ public class GeneralDashboardPage extends WebDriverServiceImpl {
 				"User List Header");
 		return new UserlistPage();
 	}
+	
+	public UserlistPage clickAverageSalesPriceMenu() throws InterruptedException {
+		click(getDriver().findElement(By.linkText("Average Sales Price")), "Average Sales Price Menu");
+		Thread.sleep(10000);
+		verifyDisplayed(
+				getDriver().findElement(By.xpath("//average-sales-price//h2[contains(text(),'Average Sales Price')]")),
+				"Average Sales Price Header");
+		return new UserlistPage();
+	}
 
 }

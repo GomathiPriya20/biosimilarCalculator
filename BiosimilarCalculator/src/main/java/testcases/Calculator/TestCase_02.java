@@ -19,7 +19,7 @@ public class TestCase_02 {
 
 		new GeneralDashboardPage().clickDrugsDashboardMenu()
 				.select_NDCfromFilterMenu(DataInputProvider.getCellData_ColName(iRowNumber, "NDC", sDataSheetName))
-				.update_UpdatedOnToExcel(
+				.update_CreatedOnToExcel(
 						DataInputProvider.getCellData_ColName(iRowNumber, "SheetName", sDataSheetName));
 
 		new GeneralDashboardPage().clickCalculatorMenu().clickBiosimilarCalculatorMenu();
@@ -41,7 +41,7 @@ public class TestCase_02 {
 						DataInputProvider.getCellData_ColName(iRowNumber, "GenericName", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "GroupName", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "IsOriginator", sDataSheetName),
-						DataInputProvider.getCellData_ColName(iRowNumber, "UpdatedOn", sDataSheetName),
+						DataInputProvider.getCellData_ColName(iRowNumber, "CreatedOn", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "ContractPrice", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "ContractPriceType", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "The_340BPrice", sDataSheetName),
@@ -54,9 +54,9 @@ public class TestCase_02 {
 						DataInputProvider.getCellData_ColName(iRowNumber, "ASP_Drug_Strength_Number", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "ASP_Drug_Strength_Units", sDataSheetName));
 
-		new GeneralDashboardPage().clickDrugsDashboardMenu()
+			new GeneralDashboardPage().clickDrugsDashboardMenu()
 				.select_NDCfromFilterMenu(DataInputProvider.getCellData_ColName(iRowNumber, "NDC_Ivig", sDataSheetName))
-				.update_UpdatedOnToExcel(
+				.update_CreatedOnToExcel(
 						DataInputProvider.getCellData_ColName(iRowNumber, "SheetName", sDataSheetName));
 
 		new GeneralDashboardPage().clickCalculatorMenu().clickIVIGCalculatorMenu();
@@ -75,7 +75,7 @@ public class TestCase_02 {
 						DataInputProvider.getCellData_ColName(iRowNumber, "Adjusted_PackageSize_Ivig", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "Drug_Package_Quantity_Ivig", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "GenericName_Ivig", sDataSheetName),
-						DataInputProvider.getCellData_ColName(iRowNumber, "UpdatedOn", sDataSheetName),
+						DataInputProvider.getCellData_ColName(iRowNumber, "CreatedOn", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "ContractPrice_Ivig", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "ContractPriceType", sDataSheetName),
 						DataInputProvider.getCellData_ColName(iRowNumber, "The_340BPrice_Ivig", sDataSheetName),

@@ -4,9 +4,11 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.json.JSONObject;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
@@ -22,7 +24,9 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import events.WebDriverEvents;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import utils.APIUtils;
 import utils.DataInputProvider;
+import utils.SessionManager;
 
  
 public class PreAndPost extends WebDriverEvents
@@ -32,7 +36,7 @@ public class PreAndPost extends WebDriverEvents
     public static ExtentTest test;
 	public static Properties properties = new Properties();
  
-    private static String reportFileName = "Test-Automaton-Report";
+    private static String reportFileName = "Test-Automation-Report";
     private static String fileSeperator = System.getProperty("file.separator");
     private static String reportFilepath = System.getProperty("user.dir") +fileSeperator+ "TestReport";
     static String timeStamp=new SimpleDateFormat("yyyy_MM_dd_hh_mm_a").format(new Date());
@@ -65,7 +69,8 @@ public class PreAndPost extends WebDriverEvents
    		
    		properties.load(new FileInputStream(new File("./src/test/resources/environment.properties")));
         //System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\chromedriver.exe");
-   		WebDriverManager.chromedriver().setup();
+   		WebDriverManager.chromedriver()//.cachePath("./src/test/resources/")
+   		.setup();
    		ChromeOptions options = new ChromeOptions();  		
    		if(properties.getProperty("Headless").equalsIgnoreCase("true"))
    			options.setHeadless(true);
@@ -76,7 +81,8 @@ public class PreAndPost extends WebDriverEvents
    		tlDriver.set(driver);		
    		getDriver().manage().window().maximize();
    		getDriver().get(URL);
-   		getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);	
+   		getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+   		
    	}
    	
     //Create the report path
@@ -99,7 +105,7 @@ public class PreAndPost extends WebDriverEvents
   public void closeAllBrowsers()
     {
     	try {
-			getDriver().quit();
+			getDriver().close();
 			test.log(Status.PASS, "The opened browsers are closed");
 		} catch (Exception e) {
 			test.log(Status.FAIL, "Unexpected error occured in Browser");

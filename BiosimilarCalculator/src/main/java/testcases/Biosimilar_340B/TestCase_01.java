@@ -186,7 +186,9 @@ public class TestCase_01 {
 
 		new GeneralDashboardPage().clickDrugsDashboardMenu()
 				.select_NDCfromFilterMenu(DataInputProvider.getCellData_ColName(iRowNumber, "NDC", sDataSheetName))
-				.clickRemoveButtonInDrugsDashboardPage();
+				.clickRemoveButtonInDrugsDashboardPage()
+
+		;
 
 	}
 }
